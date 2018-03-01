@@ -1,5 +1,5 @@
 //
-//  main.swift
+//  Stuff.swift
 //  RPG-OPC-V6
 //
 //  Created by VINCENT BOULANGER on 01/03/2018.
@@ -8,5 +8,8 @@
 
 import Foundation
 
-let newGame = Game()
-newGame.startGame()
+
+class Stuff {
+    
+    
+}
