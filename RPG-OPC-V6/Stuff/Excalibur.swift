@@ -1,5 +1,5 @@
 //
-//  main.swift
+//  Weapon.swift
 //  RPG-OPC-V6
 //
 //  Created by VINCENT BOULANGER on 01/03/2018.
@@ -8,5 +8,9 @@
 
 import Foundation
 
-let Game = Team()
-Game.startGame()
+class Excalibur:Stuff {
+    
+    init(){
+        super.init(nameWeapon: "Excalibur", amelio: 20)
+    }
+}

@@ -22,15 +22,6 @@ class Hero {
         self.healHeroPoints = healHeroPoints
         self.descriptionClassHero = descriptionClassHero
     }
-    
-    func descriptionHeroDisplay() {
-        
-        
-        print("\(descriptionClassHero) +  - \(lifePoints) de vie - \(attackPointsHero) points d'attaques _")
-    }
-    
-    
-    
     func attackHero() {
         
     }
@@ -40,9 +31,8 @@ class Hero {
     func deathHero()  {
         
     }
-    func choisirUnHerosAdverse() {
+    func choseHeroEnenmy() {
         
     }
-    
     
 }

@@ -9,14 +9,16 @@
 /* Begin PBXBuildFile section */
 		BF52B7802048314200F7A379 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52B77F2048314200F7A379 /* main.swift */; };
 		BF52B7872048315100F7A379 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52B7862048315100F7A379 /* Team.swift */; };
-		BF52B7892048315F00F7A379 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52B7882048315F00F7A379 /* Game.swift */; };
 		BF52B78B2048317100F7A379 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52B78A2048317100F7A379 /* Hero.swift */; };
 		BF52B78D204831A600F7A379 /* Warrior.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52B78C204831A600F7A379 /* Warrior.swift */; };
 		BF52B78F204831B800F7A379 /* Magician.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52B78E204831B800F7A379 /* Magician.swift */; };
 		BF52B791204831C900F7A379 /* Dwarft.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52B790204831C900F7A379 /* Dwarft.swift */; };
 		BF52B793204831EB00F7A379 /* Colossus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52B792204831EB00F7A379 /* Colossus.swift */; };
 		BF52B795204831F600F7A379 /* Stuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52B794204831F600F7A379 /* Stuff.swift */; };
-		BF52B79A2048419100F7A379 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52B7992048419100F7A379 /* Weapon.swift */; };
+		BF52B79A2048419100F7A379 /* Excalibur.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52B7992048419100F7A379 /* Excalibur.swift */; };
+		BF52B79C204844B700F7A379 /* ThorHammer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52B79B204844B700F7A379 /* ThorHammer.swift */; };
+		BF52B79F204845B700F7A379 /* GandalfScepter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52B79E204845B700F7A379 /* GandalfScepter.swift */; };
+		BF52B7A1204846E400F7A379 /* ZeusLightningStrike.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52B7A0204846E400F7A379 /* ZeusLightningStrike.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,14 +37,16 @@
 		BF52B77C2048314200F7A379 /* RPG-OPC-V6 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "RPG-OPC-V6"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF52B77F2048314200F7A379 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		BF52B7862048315100F7A379 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
-		BF52B7882048315F00F7A379 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		BF52B78A2048317100F7A379 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		BF52B78C204831A600F7A379 /* Warrior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Warrior.swift; sourceTree = "<group>"; };
 		BF52B78E204831B800F7A379 /* Magician.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Magician.swift; sourceTree = "<group>"; };
 		BF52B790204831C900F7A379 /* Dwarft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dwarft.swift; sourceTree = "<group>"; };
 		BF52B792204831EB00F7A379 /* Colossus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colossus.swift; sourceTree = "<group>"; };
 		BF52B794204831F600F7A379 /* Stuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stuff.swift; sourceTree = "<group>"; };
-		BF52B7992048419100F7A379 /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
+		BF52B7992048419100F7A379 /* Excalibur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Excalibur.swift; sourceTree = "<group>"; };
+		BF52B79B204844B700F7A379 /* ThorHammer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThorHammer.swift; sourceTree = "<group>"; };
+		BF52B79E204845B700F7A379 /* GandalfScepter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GandalfScepter.swift; sourceTree = "<group>"; };
+		BF52B7A0204846E400F7A379 /* ZeusLightningStrike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeusLightningStrike.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 				BF52B7972048322600F7A379 /* Game */,
 				BF52B7982048322A00F7A379 /* Team */,
 				BF52B796204831FE00F7A379 /* Hero */,
+				BF52B79D204844CF00F7A379 /* Stuff */,
 			);
 			path = "RPG-OPC-V6";
 			sourceTree = "<group>";
@@ -91,8 +96,6 @@
 				BF52B78E204831B800F7A379 /* Magician.swift */,
 				BF52B790204831C900F7A379 /* Dwarft.swift */,
 				BF52B792204831EB00F7A379 /* Colossus.swift */,
-				BF52B794204831F600F7A379 /* Stuff.swift */,
-				BF52B7992048419100F7A379 /* Weapon.swift */,
 			);
 			path = Hero;
 			sourceTree = "<group>";
@@ -100,7 +103,6 @@
 		BF52B7972048322600F7A379 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				BF52B7882048315F00F7A379 /* Game.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -111,6 +113,18 @@
 				BF52B7862048315100F7A379 /* Team.swift */,
 			);
 			path = Team;
+			sourceTree = "<group>";
+		};
+		BF52B79D204844CF00F7A379 /* Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				BF52B794204831F600F7A379 /* Stuff.swift */,
+				BF52B7992048419100F7A379 /* Excalibur.swift */,
+				BF52B79B204844B700F7A379 /* ThorHammer.swift */,
+				BF52B79E204845B700F7A379 /* GandalfScepter.swift */,
+				BF52B7A0204846E400F7A379 /* ZeusLightningStrike.swift */,
+			);
+			path = Stuff;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,13 +186,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF52B7872048315100F7A379 /* Team.swift in Sources */,
+				BF52B79C204844B700F7A379 /* ThorHammer.swift in Sources */,
 				BF52B78D204831A600F7A379 /* Warrior.swift in Sources */,
 				BF52B791204831C900F7A379 /* Dwarft.swift in Sources */,
 				BF52B795204831F600F7A379 /* Stuff.swift in Sources */,
 				BF52B78F204831B800F7A379 /* Magician.swift in Sources */,
-				BF52B79A2048419100F7A379 /* Weapon.swift in Sources */,
+				BF52B79F204845B700F7A379 /* GandalfScepter.swift in Sources */,
+				BF52B79A2048419100F7A379 /* Excalibur.swift in Sources */,
+				BF52B7A1204846E400F7A379 /* ZeusLightningStrike.swift in Sources */,
 				BF52B793204831EB00F7A379 /* Colossus.swift in Sources */,
-				BF52B7892048315F00F7A379 /* Game.swift in Sources */,
 				BF52B7802048314200F7A379 /* main.swift in Sources */,
 				BF52B78B2048317100F7A379 /* Hero.swift in Sources */,
 			);

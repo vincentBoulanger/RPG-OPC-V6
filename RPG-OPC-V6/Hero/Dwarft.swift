@@ -8,10 +8,9 @@
 
 import Foundation
 
-
 class Dwarft:Hero {
     init() {
-        super.init(lifePoints: 80, attackPointsHero: 30, healHeroPoints: 0, descriptionClassHero: "NAIN")
+        super.init(lifePoints: 80, attackPointsHero: 30, healHeroPoints: 0, descriptionClassHero: "NAIN    ")
     }
     
 }

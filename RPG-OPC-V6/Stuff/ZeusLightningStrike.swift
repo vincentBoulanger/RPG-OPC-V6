@@ -1,5 +1,5 @@
 //
-//  Stuff.swift
+//  ZeusLightningStrike.swift
 //  RPG-OPC-V6
 //
 //  Created by VINCENT BOULANGER on 01/03/2018.
@@ -8,8 +8,9 @@
 
 import Foundation
 
-
-class Stuff {
+class ZeusLightningStrike:Stuff {
     
-    
+    init() {
+        super.init(nameWeapon: "La foudre de Zeus ", amelio: 50)
+    }
 }

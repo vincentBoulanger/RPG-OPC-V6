@@ -1,5 +1,5 @@
 //
-//  main.swift
+//  ThorHammer.swift
 //  RPG-OPC-V6
 //
 //  Created by VINCENT BOULANGER on 01/03/2018.
@@ -8,5 +8,10 @@
 
 import Foundation
 
-let Game = Team()
-Game.startGame()
+class ThorHammer:Stuff {
+    
+    init(){
+        super.init(nameWeapon: "Le Marteau de Thor", amelio: 30)
+    }
+    
+}
