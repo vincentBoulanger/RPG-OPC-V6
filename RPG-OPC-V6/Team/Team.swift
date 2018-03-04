@@ -59,7 +59,7 @@ class Team {
             print("\(userPseudo), créez l'équipe \(i) :")
             print("====================")
 
-            for _ in 1...3 {
+            for i in 1...3 {
                 
                 descriptionHeroDisplay()
                 let userChoiceTeam = myInputInt()
@@ -79,10 +79,23 @@ class Team {
                     default:
                         print("default")
                 }
+                print("\(userPseudo), vous avez \(i) / 3 héros dans votre équipe.")
             }
-            print("\(heroesTeam)")
+            print("\(heroesTeam.count / i)")
         }
+            
+             print("\(heroesTeam)")
     }
+        /*
+             let tab = ["A1", "A2", "A3", "B1", "B2", "C1", "C2", "C3", "C4"]
+             let tab_A = tab.filter({ Array($0)[0] == "A" })
+             let tab_B = tab.filter({ Array($0)[0] == "B" })
+             let tab_C = tab.filter({ Array($0)[0] == "C" })
+             print (tab_A)
+             print (tab_B)
+             print (tab_C)
+            */
+
     
     
         func descriptionHeroDisplay() {
@@ -90,7 +103,7 @@ class Team {
             print("================================================================================")
             for i in myHeroesGame {
                 heroNumber += 1
-                print("\(heroNumber) - Le \( i.descriptionClassHero) - Vie : \(i.lifePoints), Attaque : \(i.attackPointsHero), Soins : \(i.healHeroPoints)")
+                print("\(heroNumber) - Le \( i.descriptionClassHero) - Vie : \(i.lifePoints) - Attaque : \(i.attackPointsHero) - Soins : \(i.healHeroPoints)")
                     }
             print("================================================================================")
                                         }
@@ -124,6 +137,6 @@ class Team {
     
 
     
-    
-
 }
+
+
