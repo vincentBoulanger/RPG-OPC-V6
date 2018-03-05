@@ -13,8 +13,26 @@ class Team {
     
     var playerNumber = [Int]()
     var pseudoTab = [String]()
-    var heroesTeam = [Hero]()
-    var myHeroesGame = [Warrior(), Magician(), Dwarft(), Colossus()]
+    
+    
+    
+    var machin:Int = 9
+    
+    
+    let trois :Int = 2
+    
+  
+    
+    
+    let myWarrior = [Warrior()]
+    let myMagician = [Magician()]
+    let myDwarft = [Dwarft()]
+    let myColossus = [Colossus()]
+    var heroesTeam = [[Hero]]()
+    
+    let myHeroesGame = [Warrior(), Magician(), Dwarft(), Colossus()]
+    
+    
     var infiniteLoop = true
     
     func startGame () {
@@ -25,8 +43,6 @@ class Team {
             
             introStartGame()
             createTeam()
-            
-            
             
             print("@@@@@@@@@@@@@@ End program  @@@@@@@@@@@@@@@ ")
         }
@@ -60,41 +76,36 @@ class Team {
             print("====================")
 
             for i in 1...3 {
-                
+
                 descriptionHeroDisplay()
+                
                 let userChoiceTeam = myInputInt()
+                
                 switch userChoiceTeam {
                     case 1:
-                        heroesTeam.append(Warrior())
+                        heroesTeam.append(myWarrior)
                         print("\(userPseudo) Vous avez ajouté un guerrier)")
                     case 2:
-                        heroesTeam.append(Magician())
+                        heroesTeam.append(myMagician)
                         print("\(userPseudo) Vous avez ajouté un magicien)")
                     case 3:
-                        heroesTeam.append(Dwarft())
+                        heroesTeam.append(myDwarft)
                         print("\(userPseudo) Vous avez ajouté un nain)")
                     case 4:
-                        heroesTeam.append(Colossus())
+                        heroesTeam.append(myColossus)
                         print("\(userPseudo) Vous avez ajouté un colosse)")
                     default:
-                        print("default")
+                        print("Veuillez taper un chiffre entre 1 et 4")
                 }
+    
                 print("\(userPseudo), vous avez \(i) / 3 héros dans votre équipe.")
             }
-            print("\(heroesTeam.count / i)")
-        }
+            let segmentTeam = heroesTeam.count / i
+           print("Heroes Team \(heroesTeam)")
             
-             print("\(heroesTeam)")
+       
+        }
     }
-        /*
-             let tab = ["A1", "A2", "A3", "B1", "B2", "C1", "C2", "C3", "C4"]
-             let tab_A = tab.filter({ Array($0)[0] == "A" })
-             let tab_B = tab.filter({ Array($0)[0] == "B" })
-             let tab_C = tab.filter({ Array($0)[0] == "C" })
-             print (tab_A)
-             print (tab_B)
-             print (tab_C)
-            */
 
     
     
@@ -137,6 +148,7 @@ class Team {
     
 
     
+
+
+
 }
-
-
