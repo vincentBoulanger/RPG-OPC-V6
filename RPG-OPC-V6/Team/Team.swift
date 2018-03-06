@@ -14,31 +14,20 @@ class Team {
     var playerNumber = [Int]()
     var pseudoTab = [String]()
     
-    
-    
-    var machin:Int = 9
-    
-    
-    let trois :Int = 2
-    
-  
-    
-    
-    let myWarrior = [Warrior()]
-    let myMagician = [Magician()]
-    let myDwarft = [Dwarft()]
-    let myColossus = [Colossus()]
+    var teams = [Hero]()
     var heroesTeam = [[Hero]]()
-    
+  
+   
+    /*
+    enum myHeroesGame2:Int {
+        case Warrior() = 1, Magician(), Dwarft(), Colossus()
+ }
+ */
     let myHeroesGame = [Warrior(), Magician(), Dwarft(), Colossus()]
     
-    
     var infiniteLoop = true
-    
     func startGame () {
-        
         while infiniteLoop == true {
-
             print("@@@@@@@@@@@@ Start programm  @@@@@@@@@@@@@ ")
             
             introStartGame()
@@ -74,40 +63,52 @@ class Team {
             print("====================")
             print("\(userPseudo), créez l'équipe \(i) :")
             print("====================")
-
-            for i in 1...3 {
-
+           
+    
+            var teams = [Hero]()
+            var heroesTeam = [[Hero]]()
+            heroesTeam.append(teams)
+for t in heroesTeam {
+            
+            for j in 1...3 {
+                
                 descriptionHeroDisplay()
                 
                 let userChoiceTeam = myInputInt()
                 
                 switch userChoiceTeam {
+                    
                     case 1:
-                        heroesTeam.append(myWarrior)
                         print("\(userPseudo) Vous avez ajouté un guerrier)")
+                        teams.append(Warrior())
                     case 2:
-                        heroesTeam.append(myMagician)
                         print("\(userPseudo) Vous avez ajouté un magicien)")
+                       teams.append(Magician())
                     case 3:
-                        heroesTeam.append(myDwarft)
                         print("\(userPseudo) Vous avez ajouté un nain)")
+                       teams.append(Dwarft())
                     case 4:
-                        heroesTeam.append(myColossus)
                         print("\(userPseudo) Vous avez ajouté un colosse)")
+                        teams.append(Colossus())
                     default:
                         print("Veuillez taper un chiffre entre 1 et 4")
                 }
-    
-                print("\(userPseudo), vous avez \(i) / 3 héros dans votre équipe.")
+                print("\(userPseudo), vous avez \(j) / 3 héros dans votre équipe.")
+                }
+     heroesTeam.append(teams)
             }
-            let segmentTeam = heroesTeam.count / i
-           print("Heroes Team \(heroesTeam)")
             
-       
-        }
-    }
+           
 
-    
+
+         //   print("print heroes team Index 0   @@@@@@@@@@@@@@@@@@@ \(heroesTeam[0].count)")
+          //  print("print heroes team index 1  @@@@@@@@@@@@@@@@@@@ \(heroesTeam[1].count)")
+print("print Heroes Team   @@@@@@@@@@@@@ \(heroesTeam)")
+         }
+        
+        //print("print Heroes Team index 0   @@@@@@@@@@@@@ \(heroesTeam[0])")
+        //  print("print Heroes Team index 1 @@@@@@@@@@@@@@\(heroesTeam[1])")
+    }
     
         func descriptionHeroDisplay() {
             var heroNumber = 0
