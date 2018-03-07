@@ -11,6 +11,6 @@ import Foundation
 class ZeusLightningStrike:Stuff {
     
     init() {
-        super.init(nameWeapon: "La foudre de Zeus ", amelio: 50)
+        super.init(nameWeapon: "La foudre de Zeus ", damage: 50)
     }
 }

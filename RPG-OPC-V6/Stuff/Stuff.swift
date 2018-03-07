@@ -12,12 +12,11 @@ import Foundation
 class Stuff {
     
     var nameWeapon:String
-    var amelio:Int
-    
-    init(nameWeapon:String, amelio:Int) {
+    var damage: Int
+   // var magicPower: Int
+    init(nameWeapon:String, damage:Int) {
         self.nameWeapon = nameWeapon
-        self.amelio = amelio
-        
+        self.damage = damage        
     }
     
 }

@@ -10,7 +10,7 @@ import Foundation
 
 class Warrior:Hero {
     init() {
-        super.init(lifePoints: 100, attackPointsHero: 10, healHeroPoints: 0, descriptionClassHero: "GUERRIER")
+        super.init(lifePoints: 100, stuff: Excalibur(),  descriptionClassHero: "GUERRIER")
         
         //super.attackHero()
     }

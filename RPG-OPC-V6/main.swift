@@ -8,5 +8,5 @@
 
 import Foundation
 
-let Game = Team()
-Game.startGame()
+let newGame = Game()
+newGame.startGame()

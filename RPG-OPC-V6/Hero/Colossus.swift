@@ -10,6 +10,6 @@ import Foundation
 
 class Colossus:Hero {
     init() {
-        super.init(lifePoints: 150, attackPointsHero: 5, healHeroPoints: 0, descriptionClassHero: "COLOSSE ")
+        super.init(lifePoints: 150, stuff: Excalibur(),  descriptionClassHero: "COLOSSE ")
     }
 }

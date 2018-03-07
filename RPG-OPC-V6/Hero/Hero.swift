@@ -11,15 +11,15 @@ import Foundation
 class Hero {
     
     var lifePoints:Int
-    var attackPointsHero:Int
-    var healHeroPoints:Int
+    var stuff:Stuff
+
     var descriptionClassHero:String
     
-    init(lifePoints:Int, attackPointsHero:Int, healHeroPoints: Int, descriptionClassHero: String) {
+    init(lifePoints:Int, stuff:Stuff, descriptionClassHero: String) {
         
         self.lifePoints = lifePoints
-        self.attackPointsHero = attackPointsHero
-        self.healHeroPoints = healHeroPoints
+        self.stuff = stuff // var stuff:Stuff -> greffer une arme
+   
         self.descriptionClassHero = descriptionClassHero
     }
     func attackHero() {

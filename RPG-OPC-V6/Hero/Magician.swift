@@ -10,6 +10,6 @@ import Foundation
 
 class Magician:Hero {
     init() {
-        super.init(lifePoints: 80, attackPointsHero: 0, healHeroPoints: 20, descriptionClassHero: "MAGICIEN")
+        super.init(lifePoints: 80, stuff: Excalibur(), descriptionClassHero: "MAGICIEN")
     }
 }
