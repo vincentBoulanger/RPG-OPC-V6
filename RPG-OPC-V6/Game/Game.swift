@@ -24,14 +24,14 @@ class Game {
             print("Joueur \(i), entrez votre pseudo : ")
             let player = createPlayer()
             print("Joueur \(i), vous vous appelerez désormais \(player)")
-            let menuDisplay = Team()
-            menuDisplay.describeTeam()
+            describeHeroMenu()
+          
      
                 
                 
                 let team = createTeam()
                 tabTeams.append(team)
-                let test = tabTeams[i].heroes[i].stuff.damage
+                //let test = tabTeams[i].heroes[i].stuff.damage
             }
         
 //        for i in 1...2 {
@@ -63,7 +63,18 @@ class Game {
         team.createHeroes()
         return team
     }
- 
+    func describeHeroMenu() -> Int{
+        print("================================================================================")
+        print("1 - Guerrier - Vie: 100 - Attaque: 10")
+        print("2 - Colosse  - Vie: 150 - Attaque: 5 ")
+        print("3 - Nain     - Vie: 130 - Attaque: 30 ")
+        print("4 - Magicien - Vie: 80  - Soins  : 20")
+        print("================================================================================")
+        let answerPlayer = myInputInt()
+        return answerPlayer
+    }
+    
+    
     // ##############################  Mes inputs ##################################
     
     func myInputString() -> String {

@@ -16,45 +16,29 @@ class Team {
 
     
     func createHeroes() { // create player/pseudo 1 and 2, cette fonction remplit le tab ligne 14 avec 3 PERSO
-//
-//        for i in 1...2 {
-//
-//
-//            for i in 1...3 {
-//
-//                descriptionHeroDisplay()
-//
-//                let userChoiceTeam = myInputInt()
-//              //  repeat {
+
+            for i in 1...3 {
+                //let userChoiceTeam =  myInputInt()
 //                switch userChoiceTeam {
 //                    case 1:
-//                        print("\(userPseudo) Vous avez ajouté un guerrier)")
-//       //             teamsMember.append(Magician())
+//                        print("(pseudo) Vous avez ajouté un guerrier)")
+//
 //                    case 3:
-//                        print("\(userPseudo) Vous avez ajouté un nain)")
-//                       teamsMember.append(Dwarft())
+//                        print("(userPseudo) Vous avez ajouté un nain)")
+//
 //                    case 4:
-//                        print("\(userPseudo) Vous avez ajouté un colosse)")
-//                        teamsMember.append(Colossus())
+//                        print("(userPseudo) Vous avez ajouté un colosse)")
+//
 //                    default:
 //                        print("Veuillez taper un chiffre entre 1 et 4")
 //                }
-//                        print("\(userPseudo), vous avez \(i) / 3 héros dans votre équipe.")
-//
-//           // } while userChoiceTeam == 1 && userChoiceTeam == 2 && userChoiceTeam == 3 && userChoiceTeam == 4
-//            }
-//            heroesTeam[...].append(teamsMember)
-//         }
-    }
+//                        print("\(userPseudoPlayer ), vous avez \(i) / 3 héros dans votre équipe.")
+            }
+
+         }
+
  
-    func describeTeam(){
-        print("================================================================================")
-        print("1 - Guerrier - Vie: 100 - Attaque: 10")
-        print("2 - Colosse  - Vie: 150 - Attaque: 5 ")
-        print("3 - Nain     - Vie: 130 - Attaque: 30 ")
-        print("4 - Magicien - Vie: 80  - Soins : 20")
-        print("================================================================================")
-    }
+    
     
     
  //       func teamDescription() { // faire un print
