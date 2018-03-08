@@ -9,17 +9,17 @@
 import Foundation
 
 class Hero {
-    
+    //var nameHero:String
     var lifePoints:Int
     var stuff:Stuff
 
     var descriptionClassHero:String
     
-    init(lifePoints:Int, stuff:Stuff, descriptionClassHero: String) {
+    init(lifePoints:Int,stuff:Stuff, descriptionClassHero: String) {
         
         self.lifePoints = lifePoints
         self.stuff = stuff // var stuff:Stuff -> greffer une arme
-   
+       
         self.descriptionClassHero = descriptionClassHero
     }
     func attackHero() {
@@ -31,7 +31,7 @@ class Hero {
     func deathHero()  {
         
     }
-    func choseHeroEnenmy() {
+    func choseHeroEnemy() {
         
     }
     

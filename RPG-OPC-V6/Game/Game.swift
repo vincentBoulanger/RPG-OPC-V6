@@ -15,23 +15,20 @@ class Game {
     
     func startGame () {
 
-            print("@@@@@@@@@@@@ Start programm  @@@@@@@@@@@@@ ")
+            print("@@@@@@@ Start programm  @@@@@@@@@@ ")
             
             introStartGame()
 
         for i in 1...2 {
-            print("====================")
+            print("===================================")
             print("Joueur \(i), entrez votre pseudo : ")
-            let player = createPlayer()
-            print("Joueur \(i), vous vous appelerez désormais \(player)")
-            describeHeroMenu()
-          
-     
-                
-                
-                let team = createTeam()
-                tabTeams.append(team)
-                //let test = tabTeams[i].heroes[i].stuff.damage
+            
+            let team = createTeam()
+            
+            tabTeams.append(team)
+            let test = tabTeams[0]
+          //  print("\(tabTeams[0].heroes[2])")
+            print("\(test)")
             }
         
 //        for i in 1...2 {
@@ -46,46 +43,21 @@ class Game {
     
     
     
-    func introStartGame() {
+    func introStartGame() { // first display : Story
         print("===================")
         print("Vous pénétrez dans les catacombes au péril de votre vie !")
         print(" L'ambiance est lugubre. Un frisson vous parcoure le dos. Après cette quête vous découvrirez qui vous êtes réellement! Vous avancez dans l'obscurité ! ")
         print("Soudain à la lueur d'une torche ! Vous vous retrouvez nez à nez avec une autre bande de mercenaires ! C'est l'affrontement ! La partie commence : ")
     }
     
-    func createPlayer() -> String { // Chose a player 
-        let userPseudoPlayer = myInputString()
-        return userPseudoPlayer
-    }
     
     func createTeam() -> Team { // composer une équipe
         let team = Team()
         team.createHeroes()
         return team
     }
-    func describeHeroMenu() -> Int{
-        print("================================================================================")
-        print("1 - Guerrier - Vie: 100 - Attaque: 10")
-        print("2 - Colosse  - Vie: 150 - Attaque: 5 ")
-        print("3 - Nain     - Vie: 130 - Attaque: 30 ")
-        print("4 - Magicien - Vie: 80  - Soins  : 20")
-        print("================================================================================")
-        let answerPlayer = myInputInt()
-        return answerPlayer
-    }
     
     
-    // ##############################  Mes inputs ##################################
     
-    func myInputString() -> String {
-        guard let str = readLine() else { return "" }
-        return str
-    }
     
-    func myInputInt() -> Int{
-        guard let input = readLine() else {return 0}
-        guard let inputToInt = Int(input) else {return 0}
-        return inputToInt
-    }
-
 }
