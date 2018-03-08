@@ -95,9 +95,9 @@
 			children = (
 				BF52B78A2048317100F7A379 /* Hero.swift */,
 				BF52B78C204831A600F7A379 /* Warrior.swift */,
-				BF52B78E204831B800F7A379 /* Magician.swift */,
-				BF52B790204831C900F7A379 /* Dwarft.swift */,
 				BF52B792204831EB00F7A379 /* Colossus.swift */,
+				BF52B790204831C900F7A379 /* Dwarft.swift */,
+				BF52B78E204831B800F7A379 /* Magician.swift */,
 			);
 			path = Hero;
 			sourceTree = "<group>";

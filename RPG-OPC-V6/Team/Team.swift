@@ -32,26 +32,31 @@ class Team {
         for _ in 1...3 {
             
                 describeHeroMenu()
-            let userChoiceTeam = myInputInt()
+                let userChoiceTeam = myInputInt()
          repeat {
-
                     switch userChoiceTeam {
                         case 1:
-                            print("\(userPseudoPlayer) Vous avez ajouté un guerrier)")
+                            print("\(userPseudoPlayer) Vous avez ajouté un guerrier.")
                             heroes.append(Warrior())
                         case 2:
-                            print("\(userPseudoPlayer) Vous avez ajouté un colosse)")
+                            print("\(userPseudoPlayer) Vous avez ajouté un colosse.")
                             heroes.append(Colossus())
                         case 3:
-                            print("\(userPseudoPlayer) Vous avez ajouté un nain)")
+                            print("\(userPseudoPlayer) Vous avez ajouté un nain.")
                             heroes.append(Dwarft())
                         case 4:
-                            print("\(userPseudoPlayer) Vous avez ajouté un magicien)")
+                            print("\(userPseudoPlayer) Vous avez ajouté un magicien.")
                             heroes.append(Magician())
                         default:
-                            print("\(userPseudoPlayer) Veuillez taper un chiffre entre 1 et 4")
+                            print("\(userPseudoPlayer) Veuillez taper un chiffre entre 1 et 4.")
                     }
-            } while userChoiceTeam == 0
+                } while userChoiceTeam == 0
+        }
+        for i in heroes {
+            print("Choisissez un pseudo pour votre:\(i.descriptionClassHero)")
+            let pseudoHero = myInputString()
+            i.nameHero = pseudoHero
+            print("Votre \(i.descriptionClassHero) s'appelle maintenant \(i.nameHero)")
         }
     }
 

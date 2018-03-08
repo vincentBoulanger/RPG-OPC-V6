@@ -10,7 +10,7 @@ import Foundation
 
 class Dwarft:Hero {
     init() {
-        super.init(lifePoints: 80, stuff: Excalibur(), descriptionClassHero: "NAIN    ")
+        super.init(lifePoints: 80, stuff: Excalibur(), nameHero:"Nain sans nom",descriptionClassHero: "NAIN    ")
     }
     
 }

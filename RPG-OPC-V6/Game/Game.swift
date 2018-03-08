@@ -29,6 +29,7 @@ class Game {
             let test = tabTeams[0]
           //  print("\(tabTeams[0].heroes[2])")
             print("\(test)")
+            print("La partie commence ! ")
             }
         
 //        for i in 1...2 {
