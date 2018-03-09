@@ -24,7 +24,7 @@ class Game {
                 tabTeams.append(team)
             }
             print("")
-            print("La partie commence ! ")
+            print("LE COMBAT COMMENCE ! ")
             print("Résumé des deux équipes")
             print("")
             statsTeams()
@@ -57,11 +57,29 @@ class Game {
     
             print("L'équipe () se compose de : ")
             print("")
-        for teams in tabTeams {
-            print("\(teams)")
-            let test = teams
-            
+        // let team = tabTeams[i].heroes[i].stuff.damage
+        for team in tabTeams {
+            print("\(team)")
+            print("\(team.heroes)")
+            for i in 1...2 {
+                print("L'équipe \(i)")
+                print("print team natif\(team)")
+                print("team heroes sans i\(team.heroes)")
+                print("team heroes avec i\(team.heroes[i])")
+                print("test des i avec \(team.heroes[i].descriptionClassHero) \(team.heroes[i].lifePoints) \(team.heroes[i].nameHero)")
+                print("\(team.heroes[i].descriptionClassHero)")
+                
+            }
         }
+        
+           // print("\(i.heroes[i].descriptionClassHero)")
+      //  let test2 = self.tabTeams[i].heroes[i].descriptionClassHero
+        }
+//        var user2: PFUser
+//        guard let userObject = self.objects?[indexPath.row] else {
+//            //handle the case of 'self.objects' being 'nil' and exit the current scope
+//        }
+        //user2 = userObject as! PFUser
        // let test = teams
         
 //        for i in test {
@@ -77,7 +95,7 @@ class Game {
 //                    print("\(i)")
 //                }
                 }
-            }
+
         
            // print(" Votre \(hero.heroes[0].descriptionClassHero) ")//s'appelle \(hero.heroes[i].nameHero),dispose de \(hero.heroes[i].lifePoints) points de vie." )
      

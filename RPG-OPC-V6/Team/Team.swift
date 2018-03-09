@@ -14,29 +14,32 @@ class Team {
     var heroes = [Hero]() // create empty tab hero
 
     
-    func describeHeroMenu(){ // selection hero menu display
+    func describeHeroMenu() { // selection hero menu display
 
-        print("================================================================================")
-        print("1 - Guerrier - Vie: 100 - Attaque: 10")
-        print("2 - Colosse  - Vie: 150 - Attaque: 5 ")
-        print("3 - Nain     - Vie: 130 - Attaque: 30 ")
-        print("4 - Magicien - Vie: 80  - Soins  : 20")
-        print("================================================================================")
-        print("Choisissez un héros en tapant un chiffre entre 1 et 4 ===========================")
+                print("================================================================================")
+                print("1 - Guerrier - Vie: 100 - Attaque: 10")
+                print("2 - Colosse  - Vie: 150 - Attaque: 5 ")
+                print("3 - Nain     - Vie: 130 - Attaque: 30 ")
+                print("4 - Magicien - Vie: 80  - Soins  : 20")
+                print("================================================================================")
+                print("Choisissez un héros en tapant un chiffre entre 1 et 4 ==========================")
     }
     
     func createHeroes() { // create player/pseudo 1 and 2, cette fonction remplit le tab ligne 14 avec 3 PERSO
         
                 let userPseudoPlayer = myInputString()
                 print("Vous vous appelerez désormais \(userPseudoPlayer)")
+                //describeHeroMenu()
+        
         
         for _ in 1...3 {
             
-            var userChoiceTeam = 0
-            describeHeroMenu() // call the function describe Hero Menu
+                var userChoiceTeam = 0
+                 // call the function describe Hero Menu
             
             repeat {
-               userChoiceTeam = myInputInt() // input selection hero's player
+                describeHeroMenu()
+                userChoiceTeam = myInputInt() // input selection hero's player
                 
             } while userChoiceTeam != 1 && userChoiceTeam != 2 && userChoiceTeam != 3 && userChoiceTeam != 4
             
