@@ -12,4 +12,10 @@ class Magician:Hero {
     init() {
         super.init(lifePoints: 80, stuff: Excalibur(), nameHero:"Magicien sans nom",descriptionClassHero: "MAGICIEN")
     }
+    func healHero() {
+        
+    }
+    func choseHeroTeamMate() {
+        
+    }
 }

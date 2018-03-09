@@ -16,22 +16,18 @@ class Game {
     func startGame () {
 
             print("@@@@@@@ Start programm  @@@@@@@@@@ ")
-            
             introStartGame()
-
-        for i in 1...2 {
-            print("===================================")
-            print("Joueur \(i), entrez votre pseudo : ")
-            
-            let team = createTeam()
-            
-            tabTeams.append(team)
-            let test = tabTeams[0]
-          //  print("\(tabTeams[0].heroes[2])")
-            print("\(test)")
-            print("La partie commence ! ")
+            for i in 1...2 {
+                print("===================================")
+                print("Joueur \(i), entrez votre pseudo : ")
+                let team = createTeam()
+                tabTeams.append(team)
             }
-        
+            print("")
+            print("La partie commence ! ")
+            print("Résumé des deux équipes")
+            print("")
+            statsTeams()
 //        for i in 1...2 {
 //
 //            let team = createTeam()
@@ -41,7 +37,7 @@ class Game {
             print("@@@@@@@@@@@@@@ End program  @@@@@@@@@@@@@@@ ")
 
     }
-    
+  
     
     
     func introStartGame() { // first display : Story
@@ -57,8 +53,34 @@ class Game {
         team.createHeroes()
         return team
     }
+    func statsTeams() {
+    
+            print("L'équipe () se compose de : ")
+            print("")
+        for teams in tabTeams {
+            print("\(teams)")
+            let test = teams
+            
+        }
+       // let test = teams
+        
+//        for i in test {
+//            i.heroes[0].descriptionClassHero
+//        }
+//            for i in tabTeams {
+//            print("\(i)")
+//           print("\(i.heroes[0].nameHero), le\(i.heroes[0].descriptionClassHero) possède \(i.heroes[0].lifePoints) de vie et une attaque de \(i.heroes[0].stuff.damage)")
+//                for j in i {
+//                print("\(i.heroes[0] )")
+//                print("\(i.heroes[2] )")
+//                for j in i {
+//                    print("\(i)")
+//                }
+                }
+            }
+        
+           // print(" Votre \(hero.heroes[0].descriptionClassHero) ")//s'appelle \(hero.heroes[i].nameHero),dispose de \(hero.heroes[i].lifePoints) points de vie." )
+     
     
     
-    
-    
-}
+

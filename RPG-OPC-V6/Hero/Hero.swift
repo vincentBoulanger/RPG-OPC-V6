@@ -25,9 +25,7 @@ class Hero {
     func attackHero() {
         
     }
-    func healHero() {
-        
-    }
+    
     func deathHero()  {
         
     }

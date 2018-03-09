@@ -12,15 +12,17 @@ import Foundation
 class Team {
     
     var heroes = [Hero]()
+
     
     func describeHeroMenu(){
-        
+
         print("================================================================================")
         print("1 - Guerrier - Vie: 100 - Attaque: 10")
         print("2 - Colosse  - Vie: 150 - Attaque: 5 ")
         print("3 - Nain     - Vie: 130 - Attaque: 30 ")
         print("4 - Magicien - Vie: 80  - Soins  : 20")
         print("================================================================================")
+        print("Choisissez un héros en tapant un chiffre entre 1 et 4 ===========================")
     }
     
     func createHeroes() { // create player/pseudo 1 and 2, cette fonction remplit le tab ligne 14 avec 3 PERSO
@@ -30,36 +32,52 @@ class Team {
                 print("Vous vous appelerez désormais \(userPseudoPlayer)")
         
         for _ in 1...3 {
+            var userChoiceTeam = 0
+            describeHeroMenu()
+            repeat {
+               userChoiceTeam = myInputInt()
+        } while userChoiceTeam != 1 && userChoiceTeam != 2 && userChoiceTeam != 3 && userChoiceTeam != 4
             
-                describeHeroMenu()
-                let userChoiceTeam = myInputInt()
-         repeat {
                     switch userChoiceTeam {
+                        
                         case 1:
                             print("\(userPseudoPlayer) Vous avez ajouté un guerrier.")
                             heroes.append(Warrior())
+                        //namingHero()
                         case 2:
                             print("\(userPseudoPlayer) Vous avez ajouté un colosse.")
                             heroes.append(Colossus())
+                        //namingHero()
                         case 3:
                             print("\(userPseudoPlayer) Vous avez ajouté un nain.")
                             heroes.append(Dwarft())
+                        //namingHero()
                         case 4:
                             print("\(userPseudoPlayer) Vous avez ajouté un magicien.")
                             heroes.append(Magician())
+                       // namingHero()
                         default:
-                            print("\(userPseudoPlayer) Veuillez taper un chiffre entre 1 et 4.")
+                           return
+                            print("Veuillez entrer un chiffre entre 1 et 3")
                     }
-                } while userChoiceTeam == 0
+            //} while userChoiceTeam == 1 || userChoiceTeam == 2 || userChoiceTeam == 3 || userChoiceTeam == 4
+        
         }
-        for i in heroes {
-            print("Choisissez un pseudo pour votre:\(i.descriptionClassHero)")
-            let pseudoHero = myInputString()
-            i.nameHero = pseudoHero
-            print("Votre \(i.descriptionClassHero) s'appelle maintenant \(i.nameHero)")
-        }
+    namingHero()
     }
-
+    func namingHero() {
+            for i in heroes {
+                    print("")
+                    print("Choisissez un pseudo pour votre : \(i.descriptionClassHero)")
+                    let pseudoHero = myInputString()
+                    i.nameHero = pseudoHero
+                    print("")
+                    print(" Votre \(i.descriptionClassHero ) s'appelle  \(i.nameHero)" )
+            }
+}
+    
+    
+    
     // ##############################  Mes inputs ##################################
     
     
@@ -100,6 +118,7 @@ class Team {
     
    
     
+
 
 
 
