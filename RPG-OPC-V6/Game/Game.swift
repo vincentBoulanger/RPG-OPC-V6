@@ -21,10 +21,13 @@ class Game {
                 print("Joueur \(i), entrez votre pseudo : ")
                 let team = createTeam()
                 tabTeams.append(team)
-                statsTeams()
+               statsTeams()
+                
             }
-        
-        
+        for i in 1...2 {
+            startBattle()
+            print("Choisissez un membre de votre équipe ")
+        }
         
     //            let team = createTeam()
     //            tabTeams.append(team)
@@ -49,40 +52,61 @@ class Game {
     }
    
     func statsTeams() {
+        print("Résumé des deux équipes")
+        print("")
         for i in tabTeams {
             print("1 - \(i.heroes[0].nameHero), le \(i.heroes[0].descriptionClassHero) possède \(i.heroes[0].lifePoints) de vie et une attaque de \(i.heroes[0].stuff.damage)")
             print("2 - \(i.heroes[1].nameHero), le \(i.heroes[1].descriptionClassHero) possède \(i.heroes[1].lifePoints) de vie et une attaque de \(i.heroes[1].stuff.damage)")
             print("3 - \(i.heroes[2].nameHero), le \(i.heroes[2].descriptionClassHero) possède \(i.heroes[2].lifePoints) de vie et une attaque de \(i.heroes[2].stuff.damage)")
             print("===================================")
             }
-          
+
         }
-    }
+   
     
 
     
     func startBattle() {
-        print("===================================")
-        print("LE COMBAT COMMENCE ! ")
-        print("")
-        print("Résumé des deux équipes")
+        print("===================================  Start Battle  ===================================")
+        let team = Team()
+        var tabBattle = [Hero]()
         
-       
-    }
-        func choseMyHero() {
-           
+        print("========@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@===================")
+        for i in tabTeams {
+
+            print("===================================")
+            print("LE COMBAT COMMENCE ! ")
+            print("")
+            print("")
+
             
-//           switch test {
-//                case 1:
-//                print("1 \(numbersHeroes) - \(i.heroes[0].nameHero), le \(i.heroes[0].descriptionClassHero) possède \(i.heroes[0].lifePoints) de vie et une attaque de \(i.heroes[0].stuff.damage)")
-//                case 2:
-//                print("2 \(numbersHeroes) - \(i.heroes[1].nameHero), le \(i.heroes[1].descriptionClassHero) possède \(i.heroes[1].lifePoints) de vie et une attaque de \(i.heroes[1].stuff.damage)")
-//                case 3:
-//
-//                default:
-//            }
-      
+            let heroChoicePlayer = team.myInputInt()
+
+            switch heroChoicePlayer {
+                case 1:
+                   print("4 - \(i.heroes[0].nameHero), le \(i.heroes[0].descriptionClassHero) possède \(i.heroes[0].lifePoints) de vie et une attaque de \(i.heroes[0].stuff.damage)")
+                   tabBattle.append(i.heroes[0])
+                case 2:
+                   print("4 - \(i.heroes[1].nameHero), le \(i.heroes[1].descriptionClassHero) possède \(i.heroes[1].lifePoints) de vie et une attaque de \(i.heroes[1].stuff.damage)")
+                    tabBattle.append(i.heroes[1])
+                case 3:
+                   print("5 - \(i.heroes[2].nameHero), le \(i.heroes[2].descriptionClassHero) possède \(i.heroes[2].lifePoints) de vie et une attaque de \(i.heroes[2].stuff.damage)")
+                    tabBattle.append(i.heroes[2])
+                default:
+                    print("return")
+            }
+            print("Vous  avez choisi le \(heroChoicePlayer)")
         }
+        
+    }
+    }
+
+    func choseMyHero() {  }
+
+
+
+      
+
             
         
 

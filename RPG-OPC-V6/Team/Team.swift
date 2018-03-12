@@ -81,24 +81,7 @@ class Team {
                             }
                     }
     
-    
-    func statsTeams() {
-        print("===================================")
-        for i in heroes {
-              print(" - \(i.nameHero) Le \( i.descriptionClassHero) - Vie : \(i.lifePoints) - Attaque : \(i.stuff.damage) - Soins : )")
-//            print("1 - \(heroes[0].nameHero), le \(heroes[0].descriptionClassHero) possède \(heroes[0].lifePoints) de vie et une attaque de \(heroes[0].stuff.damage)")
-//            print("2 - \(heroes[1].nameHero), le \(heroes[1].descriptionClassHero) possède \(heroes[1].lifePoints) de vie et une attaque de \(heroes[1].stuff.damage)")
-//            print("3 - \(heroes[2].nameHero), le \(heroes[2].descriptionClassHero) possède \(heroes[2].lifePoints) de vie et une attaque de \(heroes[2].stuff.damage)")
-        }
-        
-        }
-    
-    func choseTeamMate() {
-        
-        
-        
-        
-    }
+
     // ##############################  Mes inputs ##################################
     
     
