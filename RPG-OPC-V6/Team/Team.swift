@@ -66,20 +66,39 @@ class Team {
                         }
                     }
                     namingHero() // call the function to rename the heroes
+        
             }
     
     
-    func namingHero() { // function to rename the heroes choose by the players
+    func namingHero() { // function to rename the heroes by the players
             for i in heroes {
                     print("")
                     print("Choisissez un pseudo pour votre : \(i.descriptionClassHero)")
                     let pseudoHero = myInputString()
                     i.nameHero = pseudoHero
                     print("")
-                    print(" Votre \(i.descriptionClassHero ) s'appelle  \(i.nameHero)" )
-            }
-}
-
+                    print("Votre \(i.descriptionClassHero) s'appelle \(i.nameHero)" )
+                            }
+                    }
+    
+    
+    func statsTeams() {
+        print("===================================")
+        for i in heroes {
+              print(" - \(i.nameHero) Le \( i.descriptionClassHero) - Vie : \(i.lifePoints) - Attaque : \(i.stuff.damage) - Soins : )")
+//            print("1 - \(heroes[0].nameHero), le \(heroes[0].descriptionClassHero) possède \(heroes[0].lifePoints) de vie et une attaque de \(heroes[0].stuff.damage)")
+//            print("2 - \(heroes[1].nameHero), le \(heroes[1].descriptionClassHero) possède \(heroes[1].lifePoints) de vie et une attaque de \(heroes[1].stuff.damage)")
+//            print("3 - \(heroes[2].nameHero), le \(heroes[2].descriptionClassHero) possède \(heroes[2].lifePoints) de vie et une attaque de \(heroes[2].stuff.damage)")
+        }
+        
+        }
+    
+    func choseTeamMate() {
+        
+        
+        
+        
+    }
     // ##############################  Mes inputs ##################################
     
     
@@ -93,7 +112,7 @@ class Team {
         guard let inputToInt = Int(input) else {return 0}
         return inputToInt
     }
-}
+
 
     // #############################################################################
 //       func teamDescription() { // faire un print
@@ -112,10 +131,8 @@ class Team {
     
     
     
-    
-   
-    
 
+}
 
 
 
