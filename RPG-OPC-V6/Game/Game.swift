@@ -21,14 +21,14 @@ class Game {
                 print("Joueur \(i), entrez votre pseudo : ")
                 let team = createTeam()
                 tabTeams.append(team)
-               statsTeams()
-                
+                statsTeams()
+          
+               
             }
-        for i in 1...2 {
+
             startBattle()
-            print("Choisissez un membre de votre équipe ")
-        }
-        
+            print("Joueur 1, choisissez un membre de votre équipe ")
+        choseMyHero()
     //            let team = createTeam()
     //            tabTeams.append(team)
              //   let test = tabTeams[i].heroes[i].stuff.damage
@@ -58,56 +58,77 @@ class Game {
             print("1 - \(i.heroes[0].nameHero), le \(i.heroes[0].descriptionClassHero) possède \(i.heroes[0].lifePoints) de vie et une attaque de \(i.heroes[0].stuff.damage)")
             print("2 - \(i.heroes[1].nameHero), le \(i.heroes[1].descriptionClassHero) possède \(i.heroes[1].lifePoints) de vie et une attaque de \(i.heroes[1].stuff.damage)")
             print("3 - \(i.heroes[2].nameHero), le \(i.heroes[2].descriptionClassHero) possède \(i.heroes[2].lifePoints) de vie et une attaque de \(i.heroes[2].stuff.damage)")
-            print("===================================")
+            print("==================================================================")
             }
-
         }
    
     
 
     
     func startBattle() {
-        print("===================================  Start Battle  ===================================")
-        let team = Team()
-        var tabBattle = [Hero]()
         
-        print("========@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@===================")
-        for i in tabTeams {
-
-            print("===================================")
+            print("=============================  Start Battle  ===================================")
+            print("=====================@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@===================")
             print("LE COMBAT COMMENCE ! ")
             print("")
-            print("")
-
-            
+        
+    }
+    
+        func choseMyHero() {
+            let team = Team()
+            var tabBattle = [Hero]()
             let heroChoicePlayer = team.myInputInt()
 
             switch heroChoicePlayer {
                 case 1:
-                   print("4 - \(i.heroes[0].nameHero), le \(i.heroes[0].descriptionClassHero) possède \(i.heroes[0].lifePoints) de vie et une attaque de \(i.heroes[0].stuff.damage)")
-                   tabBattle.append(i.heroes[0])
+                    print("1 - \(tabTeams[0].heroes[0].nameHero), le \(tabTeams[0].heroes[0].descriptionClassHero) possède \(tabTeams[0].heroes[0].lifePoints) de vie et une attaque de \(tabTeams[0].heroes[0].stuff.damage)")
+                   tabBattle.append(tabTeams[0].heroes[0])
                 case 2:
-                   print("4 - \(i.heroes[1].nameHero), le \(i.heroes[1].descriptionClassHero) possède \(i.heroes[1].lifePoints) de vie et une attaque de \(i.heroes[1].stuff.damage)")
-                    tabBattle.append(i.heroes[1])
+                    print("2 - \(tabTeams[0].heroes[1].nameHero), le \(tabTeams[0].heroes[1].descriptionClassHero) possède \(tabTeams[0].heroes[1].lifePoints) de vie et une attaque de \(tabTeams[1].heroes[1].stuff.damage)")
+                    tabBattle.append(tabTeams[0].heroes[1])
                 case 3:
-                   print("5 - \(i.heroes[2].nameHero), le \(i.heroes[2].descriptionClassHero) possède \(i.heroes[2].lifePoints) de vie et une attaque de \(i.heroes[2].stuff.damage)")
-                    tabBattle.append(i.heroes[2])
+                    print("3 - \(tabTeams[0].heroes[2].nameHero), le \(tabTeams[0].heroes[2].descriptionClassHero) possède \(tabTeams[0].heroes[2].lifePoints) de vie et une attaque de \(tabTeams[0].heroes[2].stuff.damage)")
+                    tabBattle.append(tabTeams[0].heroes[2])
                 default:
                     print("return")
             }
-            print("Vous  avez choisi le \(heroChoicePlayer)")
+            print("Vous  avez choisi le \(tabBattle.description)")
+            for i in tabBattle {
+                if i.descriptionClassHero == "WARRIOR" ||  i.descriptionClassHero == "NAIN" || i.descriptionClassHero == "COLOSSE" {
+                    print("MENU pour choisir un enemy ")
+                    
+                } else if i.descriptionClassHero == "MAGICIEN" {
+                    print("chosir un héro allié")
+                    choseMyHero()
+                    print("Vous avez soigné ce héros")
+                }
+            }
         }
         
-    }
-    }
-
-    func choseMyHero() {  }
-
-
-
-      
-
+        func choseEnemy() {
+            let team = Team()
+            var tabBattle = [Hero]()
+            print("Choisis un héros ennemi")
+            let heroChoicePlayer = team.myInputInt()
             
-        
-
-
+            switch heroChoicePlayer {
+                    case 1:
+                        print("4 - \(tabTeams[1].heroes[0].nameHero), le \(tabTeams[1].heroes[0].descriptionClassHero) possède \(tabTeams[1].heroes[0].lifePoints) de vie et une attaque de \(tabTeams[0].heroes[0].stuff.damage)")
+                        tabBattle.append(tabTeams[0].heroes[0])
+                    case 2:
+                        print("4 - \(tabTeams[1].heroes[1].nameHero), le \(tabTeams[1].heroes[1].descriptionClassHero) possède \(tabTeams[1].heroes[1].lifePoints) de vie et une attaque de \(tabTeams[1].heroes[1].stuff.damage)")
+                        tabBattle.append(tabTeams[0].heroes[1])
+                    case 3:
+                        print("4 - \(tabTeams[1].heroes[2].nameHero), le \(tabTeams[1].heroes[2].descriptionClassHero) possède \(tabTeams[1].heroes[2].lifePoints) de vie et une attaque de \(tabTeams[0].heroes[2].stuff.damage)")
+                        tabBattle.append(tabTeams[0].heroes[2])
+                    default:
+                        print("return")
+                    }
+                    print("Vous  avez choisi le \(tabBattle.description)")
+        }
+    
+//        func choseHero() {
+//            let tabBattle = [Hero]()
+//
+//    }
+}

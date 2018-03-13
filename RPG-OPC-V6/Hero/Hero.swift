@@ -22,15 +22,5 @@ class Hero {
         self.nameHero = nameHero
         self.descriptionClassHero = descriptionClassHero
     }
-    func attackHero() {
-        
-    }
-    
-    func deathHero()  {
-        
-    }
-    func choseHeroEnemy() {
-        
-    }
-    
+   
 }
