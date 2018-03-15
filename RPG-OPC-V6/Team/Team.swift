@@ -27,7 +27,7 @@ class Team {
     
     func createHeroes() { // create player/pseudo 1 and 2, cette fonction remplit le tab ligne 14 avec 3 PERSO
         
-                let userPseudoPlayer = myInputString()
+                let userPseudoPlayer = Input.myInputString()
                 print("Vous vous appelerez désormais \(userPseudoPlayer)")
                 //describeHeroMenu()
         
@@ -39,7 +39,7 @@ class Team {
             
             repeat {
                 describeHeroMenu()
-                userChoiceTeam = myInputInt() // input selection hero's player
+                userChoiceTeam = Input.myInputInt() // input selection hero's player
                 
             } while userChoiceTeam != 1 && userChoiceTeam != 2 && userChoiceTeam != 3 && userChoiceTeam != 4
             
@@ -71,30 +71,24 @@ class Team {
     
     
     func namingHero() { // function to rename the heroes by the players
-            for i in heroes {
-                    print("")
-                    print("Choisissez un pseudo pour votre : \(i.descriptionClassHero)")
-                    let pseudoHero = myInputString()
-                    i.nameHero = pseudoHero
-                    print("")
-                    print("Votre \(i.descriptionClassHero) s'appelle \(i.nameHero)" )
-                            }
-                    }
+        for i in heroes {
+                print("Choisissez un pseudo pour votre : \(i.descriptionClassHero)")
+                let pseudoHero = Input.myInputString()
+                i.nameHero = pseudoHero
+                print("Votre \(i.descriptionClassHero) s'appelle \(i.nameHero)" )
+        }
+    }
     
+    func statsTeams() {
+       
+        for i in 0..<heroes.count {
+            let hero = heroes[i]
+            print("\(i+1) - \(hero.nameHero), le \(hero.descriptionClassHero) possède \(hero.lifePoints) de vie et une attaque de \(hero.stuff.damage)")
+        }
+        print("==================================================================")
+    }
 
-    // ##############################  Mes inputs ##################################
-    
-    
-    func myInputString() -> String { // function readLine unwrapped / verified to return a String
-        guard let str = readLine() else { return "" }
-        return str
-    }
-    
-    func myInputInt() -> Int{ // function readLine unwrapped / verified and converted ti return an Integer
-        guard let input = readLine() else {return 0}
-        guard let inputToInt = Int(input) else {return 0}
-        return inputToInt
-    }
+
 
 
     // #############################################################################

@@ -22,5 +22,24 @@ class Hero {
         self.nameHero = nameHero
         self.descriptionClassHero = descriptionClassHero
     }
+    
+    
+    func deathHero() -> Bool {
+        if lifePoints <= 0 {
+            print("Votre personnage est mort")
+                    return false
+        } else  {
+            print("Votre personnage est en pleine forme.")
+                    return true
+        }
+
+            }
+    
+    func attackHero() -> Bool {
+        if deathHero() == false {
+            print("Vous pouvez attaquer.")
+        }
+        return true
+    }
    
 }
