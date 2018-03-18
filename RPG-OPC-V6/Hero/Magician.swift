@@ -10,11 +10,14 @@ import Foundation
 
 class Magician:Hero {
     init() {
-        super.init(lifePoints: 80, stuff: Excalibur(), nameHero:"Magicien sans nom",descriptionClassHero: "MAGICIEN")
+        super.init(lifePoints: 80, stuff: GandalfScepter(), nameHero:"Magicien sans nom",descriptionClassHero: "MAGICIEN")
     }
-    func healHero() {
- 
+    func healHero() -> Bool {
         
+        // vie de machin + 20
+        if deathHero() == false {
+            print("Le Druide soigne :")
+        }
+        return true
     }
-    
 }

@@ -11,7 +11,7 @@ import Foundation
 class Input{
     
     // ##############################  Mes inputs ##################################
-    
+    // on utilise static quand on fait appel à une classe qui n'a pas besoin 
     
     static func myInputString() -> String { // function readLine unwrapped / verified to return a String
         guard let str = readLine() else { return "" }

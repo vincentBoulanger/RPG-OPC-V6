@@ -29,7 +29,7 @@ class Hero {
             print("Votre personnage est mort")
                     return false
         } else  {
-            print("Votre personnage est en pleine forme.")
+            print("Votre personnage peut attaquer")
                     return true
         }
 

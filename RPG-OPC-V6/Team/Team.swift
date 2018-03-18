@@ -16,13 +16,13 @@ class Team {
     
     func describeHeroMenu() { // selection hero menu display
 
-                print("================================================================================")
+                print("==============================================================")
                 print("1 - Guerrier - Vie: 100 - Attaque: 10")
                 print("2 - Colosse  - Vie: 150 - Attaque: 5 ")
                 print("3 - Nain     - Vie: 130 - Attaque: 30 ")
                 print("4 - Magicien - Vie: 80  - Soins  : 20")
-                print("================================================================================")
-                print("Choisissez un héros en tapant un chiffre entre 1 et 4 ==========================")
+                print("==============================================================")
+                print("Choisissez un héros en tapant un chiffre entre 1 et 4 ========")
     }
     
     func createHeroes() { // create player/pseudo 1 and 2, cette fonction remplit le tab ligne 14 avec 3 PERSO
@@ -41,7 +41,7 @@ class Team {
                 describeHeroMenu()
                 userChoiceTeam = Input.myInputInt() // input selection hero's player
                 
-            } while userChoiceTeam != 1 && userChoiceTeam != 2 && userChoiceTeam != 3 && userChoiceTeam != 4
+           } while userChoiceTeam != 1 && userChoiceTeam != 2 && userChoiceTeam != 3 && userChoiceTeam != 4
             
                     switch userChoiceTeam { // the player's choices are compared with the prpposition's game
                         
@@ -80,7 +80,6 @@ class Team {
     }
     
     func statsTeams() {
-       
         for i in 0..<heroes.count {
             let hero = heroes[i]
             print("\(i+1) - \(hero.nameHero), le \(hero.descriptionClassHero) possède \(hero.lifePoints) de vie et une attaque de \(hero.stuff.damage)")
