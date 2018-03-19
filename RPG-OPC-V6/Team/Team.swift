@@ -32,7 +32,7 @@ class Team {
                 //describeHeroMenu()
         
         
-        for _ in 1...3 {
+        for _ in 0..<3 {
             
                 var userChoiceTeam = 0
                  // call the function describe Hero Menu
@@ -82,7 +82,11 @@ class Team {
     func statsTeams() {
         for i in 0..<heroes.count {
             let hero = heroes[i]
-            print("\(i+1) - \(hero.nameHero), le \(hero.descriptionClassHero) possède \(hero.lifePoints) de vie et une attaque de \(hero.stuff.damage)")
+            if hero is Warrior || hero is Dwarft || hero is Colossus {
+            print("\(i+1) - \(hero.nameHero), le \(hero.descriptionClassHero) possède \(hero.lifePoints) de vie et une attaque de \(hero.stuff.damage) points.")
+            } else if hero is Magician {
+                print("\(i+1) - \(hero.nameHero), le \(hero.descriptionClassHero) possède \(hero.lifePoints) de vie et peut soigner \(hero.stuff.damage) points. de vie.")
+            }
         }
         print("==================================================================")
     }

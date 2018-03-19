@@ -38,6 +38,9 @@ class Hero {
     func attackHero() -> Bool {
         if deathHero() == false {
             print("Vous pouvez attaquer.")
+            
+            
+            
         }
         return true
     }

@@ -76,84 +76,170 @@ class Game {
     
     
     func heroChoice() {
+        var myFighter:Hero
+        var myEnemy:Hero
+        
+       
         print("func heroCHoice")
         print("Joueur X, Choisissez un héro de votre équipe :")
         print("Joueur 1 vous commencez : ")
         for i in 0..<tabTeams.count {
             let team = tabTeams[i]
+        
             print("Résumé de l'équipe \(i+1)")
-         
-            repeat {
             team.statsTeams()
             print("Joueur \(i+1), Choisissez un héro de votre équipe :")
             let heroChoicePlayer = Input.myInputInt()
             
-                
-            } 
-            for i in team.heroes {
-                
-                if i is Magician {
-                    
-                    print("Vous avez choisi le \(i.descriptionClassHero)")
-                    
-                    // mage : lister l'équipe 1 -> choisi le membre de son équipe -> il le soigne
-                    team.statsTeams()
-                    let heroChoicePlayer = Input.myInputInt()
-                    print("Votre herochoiceplayerChoice \(heroChoicePlayer)")
-                    return
-                    
-                } else if i is Warrior || i is Dwarft || i is Colossus  {
-                    
-                    //afficher l'équipe adverse
-                    // combattant : lister l'équipe adverse - > il en choisi un et il attaque
-                    for i in 0..<tabTeams.count {
-                        
-                        let team = tabTeams[i]
-                        print("Voici l'équipe adverse -- \(i+1)")
-                        print("=======================")
-                        team.statsTeams()
-                      //  print("Vous avez choisi le \(i.descriptionClassHero), qui allez-vous attaquer ?")
-                        print("Choisissez un héros de l'équipe adverse \(i+1):")
-                        let heroChoicePlayer = Input.myInputInt()
-                        
-                       
-                        print(" l'équipe adverse est affiché")
-                       // team2.statsTeams()
-                        for i in 0..<team.heroes.count {
-                           
-                            print("ca marche ! ")
-                            print("ca marche \(i)")
-                            
-                             for i in team.heroes {
-                                
-                           if i is Warrior || i is Dwarft || i is Colossus || i is Magician {
-                                print("Le \(i.descriptionClassHero) qui se nomme \(i.nameHero) qui a désormais \(i.lifePoints - i.stuff.damage) a \(i.attackHero())")
-                            return
-                                }
-                        }
-                    }
-                }
+            switch heroChoicePlayer {
+                    case 1:
+                        myFighter = self.tabTeams[i].heroes[0]
+                        print("Vous avez choisi votre \(myFighter.descriptionClassHero)")
+                        tabBattle.append(myFighter)
+                    case 2:
+                        myFighter = self.tabTeams[i].heroes[1]
+                        print("Vous avez choisi votre \(myFighter.descriptionClassHero)")
+                        tabBattle.append(myFighter)
+                    case 3:
+                        myFighter = self.tabTeams[i].heroes[2]
+                       // fighters.append(attacker)
+                        print("Vous avez choisi votre \(myFighter.descriptionClassHero)")
+                        tabBattle.append(myFighter)
+                    default:
+                        break
             }
-  
-}
-        func menuChoseHeroTeam() {
-            let team = Team()
-            team.statsTeams()
-        let heroChoicePlayer = Input.myInputInt()
-        switch heroChoicePlayer {
-                case 1:
-                    print("Vous avez heal le hero1")
-                case 2:
-                    print("Vous avez heal le hero2")
-                case 3:
-                    print("Vous avez heal le hero3")
-                default:
-                    print("return")
+            print("Afficher l'équipe adverse:")
+            print("Résumé de l'équipe \(i+2)")
+            tabTeams[i+1].statsTeams()
+
+                
+                print("Choisissez un héros de l'équipe adberse. Tapez 1, 2 ou 3.")
+                let HeroEnemyChoice = Input.myInputInt()
+            
+            
+                switch HeroEnemyChoice {
+                    
+                    case 1:
+                        myEnemy = self.tabTeams[i+1].heroes[0]
+                        print("Vous avez choisi le \(myEnemy.descriptionClassHero) adverse")
+                        print("\(myEnemy.descriptionClassHero) a \(myEnemy.lifePoints) points de vie.")
+                        tabBattle.append(myEnemy)
+                       
+                    case 2:
+                        myEnemy = self.tabTeams[i+1].heroes[1]
+                        print("Vous avez choisi le \(myEnemy.descriptionClassHero) adverse")
+                        print("\(myEnemy.descriptionClassHero) a \(myEnemy.lifePoints) points de vie.")
+                        tabBattle.append(myEnemy)
+                    case 3:
+                        myEnemy = self.tabTeams[i+1].heroes[2]
+                        print("Vous avez choisi le \(myEnemy.descriptionClassHero) adverse")
+                        print("\(myEnemy.descriptionClassHero) a \(myEnemy.lifePoints) points de vie.")
+                        tabBattle.append(myEnemy)
+                    default:
+                        break
+                }
+
+            battle2()
+                print("------------------------------------dfdsfsfsf")
+                return
             }
         }
+    
+    func battle() {
+            print("le \(tabBattle[0].descriptionClassHero) attaque le \(tabBattle[1].descriptionClassHero) adverse.")
+        print("le \(tabBattle[0].descriptionClassHero), avec son arme \(tabBattle[0].stuff.nameWeapon) possède \(tabBattle[0].stuff.damage) d'attaque.")
+        print("le \(tabBattle[1].descriptionClassHero) a \(tabBattle[1].lifePoints) points de vie. Le \(tabBattle[1].descriptionClassHero) n'a plus que \(tabBattle[1].lifePoints - tabBattle[0].stuff.damage) points de vie.")
+        }
+    func battle2() {
+        print("func battle 2")
+        for i in 0..<tabBattle.count {
+            
+            let heroBattle = tabBattle[i]
+            
+            if heroBattle is Magician {
+                print("Je suis un magicien")
+                print("JE SUIS UN \(tabBattle[0].descriptionClassHero) et je soigne")
+                print("Afficher l'équipe amie.")
+                let team = Team()
+                team.statsTeams()
+                print("........................................")
+               
+            } else if heroBattle is Warrior || heroBattle is Dwarft || heroBattle is Colossus {
+                
+                print("le \(tabBattle[0].descriptionClassHero) attaque le \(tabBattle[1].descriptionClassHero) adverse.")
+                print("le \(tabBattle[0].descriptionClassHero), avec son arme \(tabBattle[0].stuff.nameWeapon) enlève \(tabBattle[0].stuff.damage) points de vie ")
+                print("le \(tabBattle[1].descriptionClassHero) a \(tabBattle[1].lifePoints) points de vie. Désormais, \(tabBattle[1].nameHero) le \(tabBattle[1].descriptionClassHero) adverse a \(tabBattle[0].lifePoints - tabBattle[i].stuff.damage) points de vie.")
+                
+                break
+                
+            }
+            
+        }
+        
+        
+    }
+    
+    }
 
- 
 
-}
-}
-}
+
+
+
+
+
+
+
+
+//            for i in team.heroes {
+//
+//                if i is Magician {
+//
+//                    print("Vous avez choisi le \(i.descriptionClassHero)")
+//
+//
+//                } else if i is Warrior || i is Dwarft || i is Colossus  {
+////                    //afficher l'équipe adverse
+////                    // combattant : lister l'équipe adverse - > il en choisi un et il attaque
+////                    for i in 0..<tabTeams.count {
+////                        let team = tabTeams[i]
+////                        print("Voici l'équipe adverse -- \(i+1)")
+////                        print("=======================")
+////                        team.statsTeams()
+////                      //  print("Vous avez choisi le \(i.descriptionClassHero), qui allez-vous attaquer ?")
+////                        print("Choisissez un héros de l'équipe adverse \(i+1):")
+////                        let heroChoicePlayer = Input.myInputInt()
+////
+////                        print(" l'équipe adverse est affiché")
+////                       // team2.statsTeams()
+////                        for i in 0..<team.heroes.count {
+////
+////                            print("ca marche ! ")
+////                            print("ca marche \(i)")
+////
+////                             for i in team.heroes {
+////
+////                           if i is Warrior || i is Dwarft || i is Colossus || i is Magician {
+////                                print("Le \(i.descriptionClassHero) qui se nomme \(i.nameHero) qui a désormais \(i.lifePoints - i.stuff.damage) a \(i.attackHero())")
+////                            return
+////                                }
+////                        }
+////                    }
+////                }
+//            }
+//
+//}
+//        func menuChoseHeroTeam() {
+//            let team = Team()
+//            team.statsTeams()
+//        let heroChoicePlayer = Input.myInputInt()
+//        switch heroChoicePlayer {
+//                case 1:
+//                    print("Vous avez heal le hero1")
+//                case 2:
+//                    print("Vous avez heal le hero2")
+//                case 3:
+//                    print("Vous avez heal le hero3")
+//                default:
+//                    print("return")
+//            }
+//        }
