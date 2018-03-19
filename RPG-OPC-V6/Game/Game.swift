@@ -82,8 +82,9 @@ class Game {
        
         print("func heroCHoice")
         print("Joueur X, Choisissez un héro de votre équipe :")
-        print("Joueur 1 vous commencez : ")
+        
         for i in 0..<tabTeams.count {
+            print("Joueur \(i+1) vous commencez : ")
             let team = tabTeams[i]
         
             print("Résumé de l'équipe \(i+1)")
@@ -108,10 +109,15 @@ class Game {
                     default:
                         break
             }
-            print("Afficher l'équipe adverse:")
-            print("Résumé de l'équipe \(i+2)")
-            tabTeams[i+1].statsTeams()
+            
 
+            print("Afficher l'équipe adverse:")
+           
+         
+                
+                 print("Résumé de l'équipe  \(i+2)")
+            tabTeams[i+1].statsTeams()
+            
                 
                 print("Choisissez un héros de l'équipe adberse. Tapez 1, 2 ou 3.")
                 let HeroEnemyChoice = Input.myInputInt()
@@ -138,38 +144,43 @@ class Game {
                     default:
                         break
                 }
-
-            battle2()
-                print("------------------------------------dfdsfsfsf")
-                return
+                battle2()
+                print("------------------------------------Fin de la bataille")
+                print("---------------La partie continue : Bataille Suivante")
             }
         }
     
-    func battle() {
-            print("le \(tabBattle[0].descriptionClassHero) attaque le \(tabBattle[1].descriptionClassHero) adverse.")
-        print("le \(tabBattle[0].descriptionClassHero), avec son arme \(tabBattle[0].stuff.nameWeapon) possède \(tabBattle[0].stuff.damage) d'attaque.")
-        print("le \(tabBattle[1].descriptionClassHero) a \(tabBattle[1].lifePoints) points de vie. Le \(tabBattle[1].descriptionClassHero) n'a plus que \(tabBattle[1].lifePoints - tabBattle[0].stuff.damage) points de vie.")
-        }
+//    func battle() {
+//            print("le \(tabBattle[0].descriptionClassHero) attaque le \(tabBattle[1].descriptionClassHero) adverse.")
+//        print("le \(tabBattle[0].descriptionClassHero), avec son arme \(tabBattle[0].stuff.nameWeapon) possède \(tabBattle[0].stuff.damage) d'attaque.")
+//        print("le \(tabBattle[1].descriptionClassHero) a \(tabBattle[1].lifePoints) points de vie. Le \(tabBattle[1].descriptionClassHero) n'a plus que \(tabBattle[1].lifePoints - tabBattle[0].stuff.damage) points de vie.")
+//        }
     func battle2() {
         print("func battle 2")
         for i in 0..<tabBattle.count {
             
             let heroBattle = tabBattle[i]
-            
+            let team = tabTeams[i]
             if heroBattle is Magician {
                 print("Je suis un magicien")
-                print("JE SUIS UN \(tabBattle[0].descriptionClassHero) et je soigne")
+                print("JE SUIS UN \(tabBattle[i].descriptionClassHero) et je soigne")
                 print("Afficher l'équipe amie.")
-                let team = Team()
-                team.statsTeams()
-                print("........................................")
-               
+                
+              
+                    print("\(team.statsTeams())")
+                print("Votre \(tabBattle[i].descriptionClassHero) va soigner pour \(tabBattle[i].stuff.damage)")
+                print("Votre \(tabBattle[i].descriptionClassHero) a soigné \(tabBattle[i+1].nameHero) le \(tabBattle[i+1].descriptionClassHero) il a désormais \(tabBattle[i+1].lifePoints + tabBattle[i].stuff.damage)")
+                
+                tabBattle.removeAll()
+                print("..................fin du heal......................")
+               break
             } else if heroBattle is Warrior || heroBattle is Dwarft || heroBattle is Colossus {
                 
                 print("le \(tabBattle[0].descriptionClassHero) attaque le \(tabBattle[1].descriptionClassHero) adverse.")
-                print("le \(tabBattle[0].descriptionClassHero), avec son arme \(tabBattle[0].stuff.nameWeapon) enlève \(tabBattle[0].stuff.damage) points de vie ")
-                print("le \(tabBattle[1].descriptionClassHero) a \(tabBattle[1].lifePoints) points de vie. Désormais, \(tabBattle[1].nameHero) le \(tabBattle[1].descriptionClassHero) adverse a \(tabBattle[0].lifePoints - tabBattle[i].stuff.damage) points de vie.")
-                
+                print("le \(tabBattle[0].descriptionClassHero), avec son arme \(tabBattle[i].stuff.nameWeapon) enlève \(tabBattle[0].stuff.damage) points de vie ")
+                print("\(tabBattle[1].nameHero)le \(tabBattle[1].descriptionClassHero) a \(tabBattle[1].lifePoints) points de vie. Désormais, \(tabBattle[1].nameHero) le \(tabBattle[1].descriptionClassHero) adverse a \(tabBattle[1].lifePoints - tabBattle[0].stuff.damage) points de vie.")
+                tabBattle.removeAll()
+                print(".................Fin des coups physiques.......................")
                 break
                 
             }

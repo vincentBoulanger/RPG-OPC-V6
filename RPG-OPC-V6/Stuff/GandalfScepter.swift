@@ -11,6 +11,6 @@ import Foundation
 class GandalfScepter:Stuff {
     
     init(){
-        super.init(nameWeapon: "Le sceptre de Gandalf", damage: 30)
+        super.init(nameWeapon: "Le sceptre de Gandalf", damage: 20)
     }
 }

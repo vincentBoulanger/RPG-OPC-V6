@@ -86,7 +86,7 @@ class Team {
             print("\(i+1) - \(hero.nameHero), le \(hero.descriptionClassHero) possède \(hero.lifePoints) de vie et une attaque de \(hero.stuff.damage) points.")
             } else if hero is Magician {
                 print("\(i+1) - \(hero.nameHero), le \(hero.descriptionClassHero) possède \(hero.lifePoints) de vie et peut soigner \(hero.stuff.damage) points. de vie.")
-            }
+            } 
         }
         print("==================================================================")
     }
