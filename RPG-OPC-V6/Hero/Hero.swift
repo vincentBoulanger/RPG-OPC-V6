@@ -24,23 +24,15 @@ class Hero {
     }
     
     
+    func attack(target: Hero) {
+       
+        target.lifePoints -= stuff.damage
+        
+        print(nameHero + " attaque " + target.nameHero + " et lui inflige \(stuff.damage) dégâts"  )
+    }
     func deathHero() -> Bool {
         if lifePoints <= 0 {
             print("Votre personnage est mort")
-                    return false
-        } else  {
-            print("Votre personnage peut attaquer")
-                    return true
-        }
-
-            }
-    
-    func attackHero() -> Bool {
-        if deathHero() == false {
-            print("Vous pouvez attaquer.")
-            
-            
-            
         }
         return true
     }

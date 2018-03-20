@@ -9,8 +9,9 @@
 import Foundation
 
 class GandalfScepter:Stuff {
-    
-    init(){
-        super.init(nameWeapon: "Le sceptre de Gandalf", damage: 20)
+    let spellPower:Int
+    init(spellPower:Int){
+        self.spellPower = spellPower
+        super.init(nameWeapon: "Le sceptre de Gandalf", damage: 66)
     }
 }

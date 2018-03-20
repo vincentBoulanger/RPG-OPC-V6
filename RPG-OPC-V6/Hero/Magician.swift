@@ -9,15 +9,16 @@
 import Foundation
 
 class Magician:Hero {
+   
     init() {
-        super.init(lifePoints: 80, stuff: GandalfScepter(), nameHero:"Magicien sans nom",descriptionClassHero: "MAGICIEN")
+ 
+        super.init(lifePoints: 80, stuff: GandalfScepter(spellPower: 100), nameHero:"Magicien sans nom", descriptionClassHero: "MAGICIEN")
     }
-    func healHero() -> Bool {
+    
+    func heal(target: Hero) {
         
-        // vie de machin + 20
-        if deathHero() == false {
-            print("Le Druide soigne :")
-        }
-        return true
+        target.lifePoints += stuff.damage
+        
+        print(nameHero + " soigne " + target.nameHero + " pour \(stuff.damage) dégâts. "  )
     }
 }

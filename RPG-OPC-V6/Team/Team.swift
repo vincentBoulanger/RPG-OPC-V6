@@ -82,15 +82,24 @@ class Team {
     func statsTeams() {
         for i in 0..<heroes.count {
             let hero = heroes[i]
-            if hero is Warrior || hero is Dwarft || hero is Colossus {
-            print("\(i+1) - \(hero.nameHero), le \(hero.descriptionClassHero) possède \(hero.lifePoints) de vie et une attaque de \(hero.stuff.damage) points.")
-            } else if hero is Magician {
+            if hero is Magician {
+            
                 print("\(i+1) - \(hero.nameHero), le \(hero.descriptionClassHero) possède \(hero.lifePoints) de vie et peut soigner \(hero.stuff.damage) points. de vie.")
-            } 
+            } else  {
+                print("\(i+1) - \(hero.nameHero), le \(hero.descriptionClassHero) possède \(hero.lifePoints) de vie et une attaque de \(hero.stuff.damage) points.")
+            }
         }
         print("==================================================================")
     }
-
+//    func deathTeam() {
+//        
+//        for i in 0..<heroes.count {
+//            let hero = heroes[i]
+//            if hero.deathHero() {
+//                print("Votre équipe est mort !")
+//            }
+//        }
+//    }
 
 
 
