@@ -11,7 +11,5 @@ import Foundation
 class Warrior:Hero {
     init() {
         super.init(lifePoints: 100, stuff: Excalibur(), nameHero:"Guerrier sans nom",  descriptionClassHero: "GUERRIER")
-        
-        //super.attackHero()
     }
 }

@@ -11,6 +11,6 @@ import Foundation
 class Excalibur:Stuff {
     
     init(){
-        super.init(nameWeapon: "Excalibur", damage: 10)
+        super.init(nameWeapon: "Excalibur", damage: 50)
     }
 }

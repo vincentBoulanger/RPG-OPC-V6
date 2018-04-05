@@ -11,14 +11,11 @@ import Foundation
 class Magician:Hero {
    
     init() {
- 
-        super.init(lifePoints: 80, stuff: GandalfScepter(spellPower: 100), nameHero:"Magicien sans nom", descriptionClassHero: "MAGICIEN")
+        super.init(lifePoints: 70, stuff: GandalfScepter(spellPower: 100), nameHero:"Magicien sans nom", descriptionClassHero: "MAGICIEN")
     }
     
     func heal(target: Hero) {
-        
         target.lifePoints += stuff.damage
-        
         print(nameHero + " soigne " + target.nameHero + " pour \(stuff.damage) dégâts. "  )
     }
 }

@@ -11,7 +11,7 @@ import Foundation
 class ThorHammer:Stuff {
     
     init(){
-        super.init(nameWeapon: "Le Marteau de Thor", damage: 30)
+        super.init(nameWeapon: "Le Marteau de Thor", damage: 50)
     }
     
 }

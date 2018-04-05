@@ -13,7 +13,6 @@ class Team {
     
     var heroes = [Hero]() // create empty tab hero
 
-    
     func describeHeroMenu() { // selection hero menu display
 
                 print("==============================================================")
@@ -30,7 +29,6 @@ class Team {
                 let userPseudoPlayer = Input.myInputString()
                 print("Vous vous appelerez désormais \(userPseudoPlayer)")
                 //describeHeroMenu()
-        
         
         for _ in 0..<3 {
             
@@ -82,47 +80,44 @@ class Team {
     func statsTeams() {
         for i in 0..<heroes.count {
             let hero = heroes[i]
-            if hero is Magician {
+            if hero.lifePoints >= 1 {
             
-                print("\(i+1) - \(hero.nameHero), le \(hero.descriptionClassHero) possède \(hero.lifePoints) de vie et peut soigner \(hero.stuff.damage) points. de vie.")
-            } else  {
-                print("\(i+1) - \(hero.nameHero), le \(hero.descriptionClassHero) possède \(hero.lifePoints) de vie et une attaque de \(hero.stuff.damage) points.")
+                if hero is Magician {
+                    print("\(i+1) - \(hero.nameHero), le \(hero.descriptionClassHero) possède \(hero.lifePoints) de vie et peut soigner \(hero.stuff.damage) points de vie.")
+                    
+                } else if hero is Warrior || hero is Dwarft || hero is Colossus {
+                    
+                    print("\(i+1) - \(hero.nameHero), le \(hero.descriptionClassHero) possède \(hero.lifePoints) de vie et une attaque de \(hero.stuff.damage) points de vie.")
+                }
+                
+            } else {
+                    print("\(i+1) - \(hero.nameHero), le \(hero.descriptionClassHero) est mort.")
             }
-        }
+            
+                }
         print("==================================================================")
     }
-//    func deathTeam() {
-//        
-//        for i in 0..<heroes.count {
-//            let hero = heroes[i]
-//            if hero.deathHero() {
-//                print("Votre équipe est mort !")
-//            }
-//        }
-//    }
-
-
-
-    // #############################################################################
-//       func teamDescription() { // faire un print
-//            var heroNumber = 0
-//            print("================================================================================")
-//            for i in myHeroesGame {
-//                heroNumber += 1
-//                print("\(heroNumber) - Le \( i.descriptionClassHero) - Vie : \(i.lifePoints) - Attaque : \(i.stuff.damage) - Soins : )")
-//                    }
-//            print("Choisissez un chiffre entre 1 et 4 pour choisir un héro.")
-//            print("================================================================================")
-
-
-
-
-    
+    func deathTeams() -> Bool {
+  
+        
+        var isDead = false
+      
+        for hero in heroes {
+            if hero.lifePoints == 0 {
+                isDead = true
+            } else {
+                return false
+            }
+        }
+        return isDead
+    } //end func deathTeam
     
     
 
-}
 
 
 
+
+
+} // end class team
 
