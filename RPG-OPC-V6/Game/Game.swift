@@ -23,7 +23,7 @@ class Game {
                 let team = createTeam()
                 tabTeams.append(team)
             }
-
+			goCheckName()
             fight()
             showWinner()
         print("@@@@@@@@@@@@@@ End program  @@@@@@@@@@@@@@@ ")
@@ -51,11 +51,6 @@ class Game {
         team.createHeroes()
         return team
     }
-    func gameWin()  {
-    
-            
-        
-        }
 
     
     func fight() {
@@ -79,12 +74,19 @@ class Game {
                 print("Joueur \(i+1), Choisissez un héro de votre équipe :")
                 
                 repeat{
-                    heroChoicePlayer = Input.myInputInt()
+					
+					heroChoicePlayer = 0
+					
+					if let data = readLine() {
+						if let dataToInt = Int(data) {
+							heroChoicePlayer = dataToInt
+						}
+					}
                 } while heroChoicePlayer != 1 && heroChoicePlayer != 2 && heroChoicePlayer != 3
                 
                 myFighter = tabTeams[i].heroes[heroChoicePlayer - 1]
-                
-                print("Vous avez choisi \(myFighter.nameHero) le \(myFighter.descriptionClassHero)")
+				magicBox(hero: myFighter)
+				
                 
                 if let magician = myFighter as? Magician {
                     // factoriser le grand if else, appeler deux fonctions
@@ -93,15 +95,24 @@ class Game {
                     //afficher l'équipe allié
                     print("===========================================")
                     tabTeams[i].statsTeams()
+            
+					
                     print("Choisissez un héros de votre équipe pour le soigner")
+					
+					
                     repeat{
                         
-                        heroChoicePlayer = Input.myInputInt()
+						if let data = readLine() {
+							if let dataToInt = Int(data) {
+								heroChoicePlayer = dataToInt
+							}
+						}
                         
                     } while heroChoicePlayer != 1 && heroChoicePlayer != 2 && heroChoicePlayer != 3
-                    
+                    goEventRanDom()
                     myEnemy = tabTeams[i].heroes[heroChoicePlayer - 1]
                     print("Les points de vie de votre \(myEnemy.nameHero) le \(myEnemy.descriptionClassHero)  étaient de \(myEnemy.lifePoints)")
+					
                     magician.heal(target: myEnemy)
                     print("Votre \(myEnemy.descriptionClassHero) a été soigné par votre \(myFighter.descriptionClassHero) pour \(myFighter.stuff.damage) de vie.") // -> les mettre dans la fonction hero
                     print("\(myEnemy.nameHero), le \(myEnemy.descriptionClassHero) est désormais de \(myEnemy.lifePoints) points de vie")
@@ -112,21 +123,31 @@ class Game {
                     print("===========================================")
                     
                     if i == 0 {
+						
+                        
                         let myEnemyTeam = tabTeams[i+1]
                         
                         myEnemyTeam.statsTeams()
+                       
                         
                         print("Joueur \(i+1),Choisissez un héros de l'équipe adverse pour l'attaquer : ")
-                        
+						
                         repeat{
                             
-                            heroChoicePlayer = Input.myInputInt()
+							if let data = readLine() {
+								if let dataToInt = Int(data) {
+									heroChoicePlayer = dataToInt
+								}
+							}
                             
                         } while heroChoicePlayer != 1 && heroChoicePlayer != 2 && heroChoicePlayer != 3
-                        
+						
+                        goEventRanDom()
+						
                         myEnemy = myEnemyTeam.heroes[heroChoicePlayer - 1]
                         
                         myFighter.attack(target: myEnemy)
+						
                         print("Votre enemi est : \(myEnemy.nameHero) le \(myEnemy.descriptionClassHero)")
                         print("\(myFighter.nameHero) votre \(myFighter.descriptionClassHero) a infligé \(myFighter.stuff.damage) points de dégats à \(myEnemy.nameHero) le \(myEnemy.descriptionClassHero) enemi avec son arme \(myFighter.stuff.nameWeapon).")
                         // afficher l'équipe enemie
@@ -144,20 +165,29 @@ class Game {
                         print("Joueur \(i+1),Choisissez un héros de l'équipe adverse pour l'attaquer : ")
                         
                         repeat{
-                            
-                            heroChoicePlayer = Input.myInputInt()
+							// remplace la class input.
+							heroChoicePlayer = 0
+							
+							if let data = readLine() {
+								if let dataToInt = Int(data) {
+									heroChoicePlayer = dataToInt
+								}
+							}
+							
                             
                         } while heroChoicePlayer != 1 && heroChoicePlayer != 2 && heroChoicePlayer != 3
                         
                         myEnemy = myEnemyTeam.heroes[heroChoicePlayer - 1]
                         
                         myFighter.attack(target: myEnemy)
+						
                         print("Votre enemi est : \(myEnemy.nameHero) le \(myEnemy.descriptionClassHero)")
+						
                         print("\(myFighter.nameHero) votre \(myFighter.descriptionClassHero) a infligé \(myFighter.stuff.damage) points de dégats à \(myEnemy.nameHero) le \(myEnemy.descriptionClassHero) enemi avec son arme \(myFighter.stuff.nameWeapon).")
                         // afficher l'équiepe enemie
                         // on le selectionne
                         // on l'attaque
-                        
+				
                         if  myEnemyTeam.deathTeams() {
                             return
                         }
@@ -173,45 +203,81 @@ class Game {
     }
     
     func showWinner () {
-        print("=======================================================================")
+
         print("=======================================================================")
         print("-------------------------Fin de la bataille----------------------------")
         print("-------------------------Résumé des équipes----------------------------")
         
         resumeTeams() //  les équipes sont listées à la fin du round
+        
         getWinner()
-        // guard let winner = getWinner() else {return}
-      //  print("L'équipe gagnante est \()")
-        print("---------------La partie continue : Bataille Suivante")
+
     }
+    
     func getWinner() {
        
         for i in 0..<tabTeams.count {
           let team = tabTeams[i]
             if !team.deathTeams() {
-                print("L'équipe gagante est : \(i+1)")
+                print("Bravo ! Le gagnant est l'équipe \(i+1)")
+				print("--------------- FIN DE LA PARTIE ")
             }
         }
-
     }
-     /*
-    func getWinner() -> Team? {
-        var winner:Team?
-        for team in tabTeams {
-            if !team.deathTeams() {
-                winner = team
-            }
-        }
-        
-        return winner
-    }
-   */
-    
-    
-    
-} // fin de la class Game
-
-
-
+	
+	
+	
+    func goEventRanDom() {
+        for i in 0..<tabTeams.count {
+            let team = tabTeams[i]
+			//eventRanDom()
+		} // fin de la class Game
+	}
+	
+	func goCheckName(){
+		for i in 0..<tabTeams.count {
+			let team = tabTeams[i]
+			team.checkName()
+			
+		}
+	}
+	
+	
+	func magicBox(hero: Hero) {
+		
+		let random = arc4random_uniform(100)
+		
+		if random <= 20 {
+			
+			let newArm = SwordfOfThe1000Truths()
+			hero.stuff = newArm
+			
+		}
+		
+	}
+	
+	func eventRanDom(team : Team) {
+		
+		let eventRandom = arc4random_uniform(10)
+		if eventRandom == 1 {
+			print("============= Event aléatoire : Les dieux s'en mêlent ! =============")
+			print("Les dieux vous observaient depuis le début. Fatigués de vos chamailleries, ils décident d'intervenir à leur bon gré.")
+			print("Résulat : Une boule de feu traverse le champ de bataille. ")
+			print("Tous les combattants de l'équipe adverse ont perdu 20 points de vie.")
+			print("=======================================================================")
+			
+			for i in 0..<team.heroes.count {
+				
+				let hero = team.heroes[i]
+				
+				if hero.lifePoints >= 1 {
+					
+					hero.lifePoints -= 20
+					
+				}
+			}
+		}
+	}
+}
 
 

@@ -9,12 +9,13 @@
 import Foundation
 
 class Hero {
+	
     var nameHero:String
     var lifePoints:Int
     var stuff:Stuff
 
     var descriptionClassHero:String
-    
+	
     init(lifePoints:Int, stuff:Stuff, nameHero:String, descriptionClassHero: String) {
         
         self.lifePoints = lifePoints
@@ -23,14 +24,12 @@ class Hero {
         self.descriptionClassHero = descriptionClassHero
     }
     
-    
     func attack(target: Hero) {
-       
         target.lifePoints -= stuff.damage
         if target.lifePoints < 0 {
             target.lifePoints = 0
         }
-        print(nameHero + " attaque " + target.nameHero + " et lui inflige \(stuff.damage) dégâts")
+        print(nameHero + " attaque " + target.nameHero + " et lui inflige \(stuff.damage) dégâts.")
     }
-    
+
 }

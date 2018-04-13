@@ -16,6 +16,7 @@ class Magician:Hero {
     
     func heal(target: Hero) {
         target.lifePoints += stuff.damage
-        print(nameHero + " soigne " + target.nameHero + " pour \(stuff.damage) dégâts. "  )
+        print(nameHero + " soigne " + target.nameHero + " pour \(stuff.damage) dégâts."  )
     }
+   
 }

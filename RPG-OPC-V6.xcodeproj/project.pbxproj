@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF23204720595FA500C1C4E7 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF23204620595FA500C1C4E7 /* Input.swift */; };
 		BF52B7802048314200F7A379 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52B77F2048314200F7A379 /* main.swift */; };
 		BF52B7872048315100F7A379 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52B7862048315100F7A379 /* Team.swift */; };
 		BF52B78B2048317100F7A379 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52B78A2048317100F7A379 /* Hero.swift */; };
@@ -21,7 +20,7 @@
 		BF52B79F204845B700F7A379 /* GandalfScepter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52B79E204845B700F7A379 /* GandalfScepter.swift */; };
 		BF52B7A1204846E400F7A379 /* ZeusLightningStrike.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52B7A0204846E400F7A379 /* ZeusLightningStrike.swift */; };
 		BF52B7C920501FCA00F7A379 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52B7C820501FCA00F7A379 /* Game.swift */; };
-		BF9837AA207688D4004E9181 /* swordOfThe1000Truths.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9837A9207688D4004E9181 /* swordOfThe1000Truths.swift */; };
+		BF9837AA207688D4004E9181 /* SwordOfThe1000Truths.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9837A9207688D4004E9181 /* SwordOfThe1000Truths.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,7 +36,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BF23204620595FA500C1C4E7 /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
 		BF52B77C2048314200F7A379 /* RPG-OPC-V6 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "RPG-OPC-V6"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF52B77F2048314200F7A379 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		BF52B7862048315100F7A379 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
@@ -52,7 +50,7 @@
 		BF52B79E204845B700F7A379 /* GandalfScepter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GandalfScepter.swift; sourceTree = "<group>"; };
 		BF52B7A0204846E400F7A379 /* ZeusLightningStrike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeusLightningStrike.swift; sourceTree = "<group>"; };
 		BF52B7C820501FCA00F7A379 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		BF9837A9207688D4004E9181 /* swordOfThe1000Truths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swordOfThe1000Truths.swift; sourceTree = "<group>"; };
+		BF9837A9207688D4004E9181 /* SwordOfThe1000Truths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwordOfThe1000Truths.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +84,6 @@
 			isa = PBXGroup;
 			children = (
 				BF52B77F2048314200F7A379 /* main.swift */,
-				BF23204620595FA500C1C4E7 /* Input.swift */,
 				BF52B7972048322600F7A379 /* Game */,
 				BF52B7982048322A00F7A379 /* Team */,
 				BF52B796204831FE00F7A379 /* Hero */,
@@ -131,7 +128,7 @@
 				BF52B79B204844B700F7A379 /* ThorHammer.swift */,
 				BF52B79E204845B700F7A379 /* GandalfScepter.swift */,
 				BF52B7A0204846E400F7A379 /* ZeusLightningStrike.swift */,
-				BF9837A9207688D4004E9181 /* swordOfThe1000Truths.swift */,
+				BF9837A9207688D4004E9181 /* SwordOfThe1000Truths.swift */,
 			);
 			path = Stuff;
 			sourceTree = "<group>";
@@ -194,7 +191,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF23204720595FA500C1C4E7 /* Input.swift in Sources */,
 				BF52B7872048315100F7A379 /* Team.swift in Sources */,
 				BF52B79C204844B700F7A379 /* ThorHammer.swift in Sources */,
 				BF52B78D204831A600F7A379 /* Warrior.swift in Sources */,
@@ -208,7 +204,7 @@
 				BF52B793204831EB00F7A379 /* Colossus.swift in Sources */,
 				BF52B7802048314200F7A379 /* main.swift in Sources */,
 				BF52B78B2048317100F7A379 /* Hero.swift in Sources */,
-				BF9837AA207688D4004E9181 /* swordOfThe1000Truths.swift in Sources */,
+				BF9837AA207688D4004E9181 /* SwordOfThe1000Truths.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

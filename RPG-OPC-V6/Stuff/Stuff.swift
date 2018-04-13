@@ -13,7 +13,6 @@ class Stuff {
     
     var nameWeapon:String
     var damage: Int
-   // var magicPower: Int
     init(nameWeapon:String, damage:Int) {
         self.nameWeapon = nameWeapon
         self.damage = damage        
