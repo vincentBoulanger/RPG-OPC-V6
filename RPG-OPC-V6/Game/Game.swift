@@ -16,20 +16,21 @@ class Game {
 
             print("@@@@@@@ Start programm  @@@@@@@@@@ ")
             introStartGame()
-
+		
             for i in 0..<2 {
                 print("===================================")
                 print("Joueur \(i+1), entrez votre pseudo : ")
+				createPseudoPlayer()
                 let team = createTeam()
                 tabTeams.append(team)
             }
-			goCheckName()
+			//goCheckName()
             fight()
             showWinner()
-        print("@@@@@@@@@@@@@@ End program  @@@@@@@@@@@@@@@ ")
+        	print("@@@@@@@@@@@@@@ End program  @@@@@@@@@@@@@@@ ")
 
     }
-    func resumeTeams() {
+    func resumeTeams() { // team selectionned resume
         
         for i in 0..<tabTeams.count {
             print("Résumé de l'équipe \(i+1)")
@@ -45,7 +46,36 @@ class Game {
         print("L'ambiance est lugubre. Un frisson vous parcoure le dos. Après cette quête vous découvrirez qui vous êtes réellement! Vous avancez dans l'obscurité ! ")
         print("Soudain à la lueur d'une torche ! Vous vous retrouvez nez à nez avec une autre bande de mercenaires ! C'est l'affrontement ! La partie commence : ")
     }
-    
+//	func createPseudo() { // composer une équipe
+//		let team = Team()
+//		team.createPseudoPlayer()
+//		print("Vous vous nommerez : \(team.createPseudoPlayer())")
+//	}
+	
+	func createPseudoPlayer() {
+		let userPseudoPlayer = ""
+		repeat {
+			
+		if let data = readLine() {
+				let	userPseudoPlayer = data
+				print("Vous vous appelerez désormais \(userPseudoPlayer)")
+			}
+			
+			} while userPseudoPlayer != ""
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
     func createTeam() -> Team { // composer une équipe
         let team = Team()
         team.createHeroes()
@@ -109,7 +139,7 @@ class Game {
 						}
                         
                     } while heroChoicePlayer != 1 && heroChoicePlayer != 2 && heroChoicePlayer != 3
-                    goEventRanDom()
+                   // goEventRanDom()
                     myEnemy = tabTeams[i].heroes[heroChoicePlayer - 1]
                     print("Les points de vie de votre \(myEnemy.nameHero) le \(myEnemy.descriptionClassHero)  étaient de \(myEnemy.lifePoints)")
 					
@@ -124,11 +154,9 @@ class Game {
                     
                     if i == 0 {
 						
-                        
                         let myEnemyTeam = tabTeams[i+1]
                         
                         myEnemyTeam.statsTeams()
-                       
                         
                         print("Joueur \(i+1),Choisissez un héros de l'équipe adverse pour l'attaquer : ")
 						
@@ -142,7 +170,7 @@ class Game {
                             
                         } while heroChoicePlayer != 1 && heroChoicePlayer != 2 && heroChoicePlayer != 3
 						
-                        goEventRanDom()
+                        //goEventRanDom()
 						
                         myEnemy = myEnemyTeam.heroes[heroChoicePlayer - 1]
                         
@@ -158,6 +186,7 @@ class Game {
                         }
                         
                     } else {
+						
                         let myEnemyTeam = tabTeams[i-1]
                         
                         myEnemyTeam.statsTeams()
@@ -173,7 +202,6 @@ class Game {
 									heroChoicePlayer = dataToInt
 								}
 							}
-							
                             
                         } while heroChoicePlayer != 1 && heroChoicePlayer != 2 && heroChoicePlayer != 3
                         
@@ -189,6 +217,7 @@ class Game {
                         // on l'attaque
 				
                         if  myEnemyTeam.deathTeams() {
+							
                             return
                         }
                     }
@@ -225,14 +254,13 @@ class Game {
         }
     }
 	
-	
-	
-    func goEventRanDom() {
-        for i in 0..<tabTeams.count {
-            let team = tabTeams[i]
-			//eventRanDom()
-		} // fin de la class Game
-	}
+//    func goEventRanDom() {
+//        for i in 0..<tabTeams.count {
+//            let team = tabTeams[i]
+//			//eventRanDom()
+//
+//		}
+//	}
 	
 	func goCheckName(){
 		for i in 0..<tabTeams.count {
@@ -258,8 +286,10 @@ class Game {
 	
 	func eventRanDom(team : Team) {
 		
-		let eventRandom = arc4random_uniform(10)
+		let eventRandom = arc4random_uniform(20)
+		
 		if eventRandom == 1 {
+			
 			print("============= Event aléatoire : Les dieux s'en mêlent ! =============")
 			print("Les dieux vous observaient depuis le début. Fatigués de vos chamailleries, ils décident d'intervenir à leur bon gré.")
 			print("Résulat : Une boule de feu traverse le champ de bataille. ")
@@ -279,5 +309,3 @@ class Game {
 		}
 	}
 }
-
-

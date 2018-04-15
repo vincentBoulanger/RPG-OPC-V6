@@ -8,9 +8,11 @@
 
 import Foundation
 
-class sworfOfThe1000Truthse:Stuff {
+class SwordfOfThe1000Truths:Stuff {
     
-    init() {
+     init() {
         super.init(nameWeapon: "L'épée des milles vérités", damage: 100)
     }
+
+    
 }

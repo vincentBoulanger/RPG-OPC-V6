@@ -24,16 +24,9 @@ class Team {
 		print("Choisissez un héros en tapant un chiffre entre 1 et 4 ========")
     }
 	
-	func createPseudoPlayer() -> String {
-		let userPseudoPlayer = ""
-		
-		print("Vous vous appelerez désormais \(userPseudoPlayer)")
-		return userPseudoPlayer
-	}
+	
 	
     func createHeroes() {
-		
-			describeHeroMenu()
 		
         for _ in 0..<3 {
             
@@ -55,21 +48,21 @@ class Team {
 				switch userChoiceTeam { // the player's choices are compared with the prpposition's game
                         
                         case 1:
-                            print("\(createPseudoPlayer()) Vous avez ajouté un guerrier.")
+                            print("Vous avez ajouté un guerrier.")
                             heroes.append(Warrior())
-                  
+					
                         case 2:
-                            print("\(createPseudoPlayer()) Vous avez ajouté un colosse.")
+                            print("Vous avez ajouté un colosse.")
                             heroes.append(Colossus())
-              
+					
                         case 3:
-                            print("\(createPseudoPlayer()) Vous avez ajouté un nain.")
+                            print("Vous avez ajouté un nain.")
                             heroes.append(Dwarft())
-          
-                        case 4:
-                            print("\(createPseudoPlayer()) Vous avez ajouté un magicien.")
-                            heroes.append(Magician())
     
+                        case 4:
+                            print("Vous avez ajouté un magicien.")
+                            heroes.append(Magician())
+
                         default:
                            return
                         }
@@ -82,34 +75,34 @@ class Team {
 			print("Choisissez un pseudo pour votre : \(i.descriptionClassHero)")
 			var pseudoHero = ""
 			repeat {
-				
 				if let data = readLine() {
-					
 					pseudoHero = data
-				
 				}
 							
 			} while pseudoHero == ""
-			
-                		i.nameHero = pseudoHero
-                		print("Votre \(i.descriptionClassHero) s'appelle \(i.nameHero)" )
+					i.nameHero = pseudoHero
+					print("Votre \(i.descriptionClassHero) s'appelle \(i.nameHero)" )
         }
+		//checkName()
     }
 	
 	func checkName(){
 		print(".....vérification des pseudos des héros")
 		for i in 0..<heroes.count {
 			let hero = heroes
+			if hero[i].nameHero.contains(hero[i+1].nameHero) {
+				print("test")
+			}
+//			if hero[i].nameHero == hero[i].nameHero || hero[i].nameHero != hero[i+1].nameHero || hero[i].nameHero != hero[i+2].nameHero  {
+//				print("Error : deux héros s'appellent de la même façon")
+//				print("Renommez vos héros")
+//			}
 			
-			if hero[i].nameHero == hero[i].nameHero || hero[i].nameHero != hero[i+1].nameHero || hero[i].nameHero != hero[i+2].nameHero  {
-				print("Error : deux héros s'appellent de la même façon")
-				print("Renommez vos héros")
 				namingHero()
 				
 			}
 		}
-	}
-
+	
     func statsTeams() {
         for i in 0..<heroes.count {
 			
@@ -129,8 +122,7 @@ class Team {
                 }
         print("==================================================================")
     }
-    
-
+	
     func deathTeams() -> Bool {
         var isDead = false
         for hero in heroes {
