@@ -83,25 +83,34 @@ class Team {
 					i.nameHero = pseudoHero
 					print("Votre \(i.descriptionClassHero) s'appelle \(i.nameHero)" )
         }
-		//checkName()
+		checkName()
     }
 	
 	func checkName(){
-		print(".....vérification des pseudos des héros")
-		for i in 0..<heroes.count {
-			let hero = heroes
-			if hero[i].nameHero.contains(hero[i+1].nameHero) {
-				print("test")
-			}
-//			if hero[i].nameHero == hero[i].nameHero || hero[i].nameHero != hero[i+1].nameHero || hero[i].nameHero != hero[i+2].nameHero  {
-//				print("Error : deux héros s'appellent de la même façon")
-//				print("Renommez vos héros")
-//			}
+		var checkNameIsOk:Bool = false
+		
+		print(".....vérification des pseudos des héros... EN COURS")
+		repeat {
+			for i in 0..<heroes.count {
 			
-				namingHero()
+				let hero = heroes
+			
+				if hero[i].nameHero == hero[i+1].nameHero || hero[i].nameHero == hero[i+2].nameHero {
+					print("Vous ne pouvez pas posséder plusieurs héros avec un pseudo identique.")
 				
+					namingHero()
+					checkNameIsOk = false
+					return
+				} else {
+					print(".....vérification des pseudos des héros...OK")
+					checkNameIsOk = true
+					return
+				}
+			
 			}
-		}
+		} while checkNameIsOk == true
+	
+	}
 	
     func statsTeams() {
         for i in 0..<heroes.count {
@@ -126,7 +135,7 @@ class Team {
     func deathTeams() -> Bool {
         var isDead = false
         for hero in heroes {
-            if hero.lifePoints == 0 {
+            if hero.lifePoints <= 0 {
                 isDead = true
             } else {
                 return false
