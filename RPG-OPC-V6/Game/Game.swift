@@ -25,7 +25,7 @@ class Game { // create class GAme
                 let team = createTeam()
                 tabTeams.append(team)
             }
-	
+			checkAllTeamPseudo()
             fight()
             showWinner()
         	print("@@@@@@@@@@@@@@ End program  @@@@@@@@@@@@@@@ ")
@@ -238,9 +238,6 @@ class Game { // create class GAme
         }
     }
 	
-
-	
-	
 	func magicBox(hero: Hero) {
 		
 		let random = arc4random_uniform(100)
@@ -280,4 +277,41 @@ class Game { // create class GAme
 			}
 		}
 	}
+	func checkAllTeamPseudo() -> Bool {
+		
+//	if nameHeroTeam.contains("\(nameHeroTeam)") {
+		var checkNameHeroTeamIsOk:Bool = false
+		repeat {
+
+			for i in 0..<tabTeams.count {
+				let team = tabTeams[i]
+				print("print tabteams i \(team)")
+				print("@@@@@@@@@@@@@@@@   affiche l'équipe \(i+1)")
+				for i in 0..<team.heroes.count {
+			
+						let hero = team.heroes[i]
+					
+						if hero.nameHero == hero.nameHero {
+							
+							print("Les équipes possèdent des homonymes.")
+							print("Vous devez renommer vos héros.")
+							let team = Team()
+							team.namingHero()
+							checkNameHeroTeamIsOk = false
+							return checkNameHeroTeamIsOk
+							
+						} else {
+							
+							print("Les équipes sont OK. La partie va pouvoir commencer.")
+							checkNameHeroTeamIsOk = true
+							return checkNameHeroTeamIsOk
+						}
+					}
+				}
+		} while checkNameHeroTeamIsOk == true
+		return checkNameHeroTeamIsOk
+		
+		
+	}
+
 }

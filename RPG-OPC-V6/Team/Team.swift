@@ -31,10 +31,9 @@ class Team {
         for _ in 0..<3 {
             
                 var userChoiceTeam = 0
-                 // call the function describe Hero Menu
             
 				repeat {
-					describeHeroMenu()
+					describeHeroMenu()   // call the function describe Hero display
 					// input selection hero's player
 					userChoiceTeam = 0
 					
@@ -86,33 +85,82 @@ class Team {
 		checkName()
     }
 	
-	func checkName(){
+	func checkName() { // verification the name of hero's team
 		var checkNameIsOk:Bool = false
 		
-		print(".....vérification des pseudos des héros... EN COURS")
 		repeat {
 			for i in 0..<heroes.count {
 			
 				let hero = heroes
 			
-				if hero[i].nameHero == hero[i+1].nameHero || hero[i].nameHero == hero[i+2].nameHero {
+				if hero[i].nameHero == hero[i].nameHero {
+					
+					print(".....vérification des pseudos des héros... ERREUR.")
 					print("Vous ne pouvez pas posséder plusieurs héros avec un pseudo identique.")
-				
 					namingHero()
 					checkNameIsOk = false
-					return
+					
+					
 				} else {
+					
 					print(".....vérification des pseudos des héros...OK")
 					checkNameIsOk = true
-					return
+
 				}
-			
 			}
-		} while checkNameIsOk == true
-	
+		} while checkNameIsOk == false
+		
 	}
 	
-    func statsTeams() {
+//	func checkAllTeamPseudo() -> Bool {
+//		
+//		//	if nameHeroTeam.contains("\(nameHeroTeam)") {
+//		var checkNameHeroTeamIsOk:Bool = false
+//		repeat {
+//			
+//			
+//				print("@@@@@@@@@@@@@@@@   affiche l'équipe ")
+//			for i in 0..<heroes.count {
+//					let team = Team()
+//					let hero = heroes
+//				
+//				for i in team {
+//					if 
+//				}
+//					if hero[i].nameHero == hero[].nameHero {
+//									print("Les équipes possèdent des homonymes.")
+//						print("Vous devez renommer vos héros.")
+//						let team = Team()
+//						team.namingHero()
+//						checkNameHeroTeamIsOk = false
+//						return checkNameHeroTeamIsOk
+//						
+//					} else {
+//						
+//						print("Les équipes sont OK. La partie va pouvoir commencer.")
+//						checkNameHeroTeamIsOk = true
+//						return checkNameHeroTeamIsOk
+//					}
+//				}
+//
+//		} while checkNameHeroTeamIsOk == false
+//		return checkNameHeroTeamIsOk
+//		
+//		
+//	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    func statsTeams() { // different text are displaying if the hero heal or attack or is dead
         for i in 0..<heroes.count {
 			
             let hero = heroes[i]
@@ -130,7 +178,7 @@ class Team {
                     }
                 }
         print("==================================================================")
-    }
+    } // end class StatsTeams
 	
     func deathTeams() -> Bool {
         var isDead = false
