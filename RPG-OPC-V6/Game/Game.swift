@@ -48,7 +48,7 @@ class Game {
         print("Soudain à la lueur d'une torche ! Vous vous retrouvez nez à nez avec une autre bande de mercenaires ! C'est l'affrontement ! La partie commence : ")
     }
 	func createPseudoHeroes() {
-	
+	// ajout d'un committ
 	}
 	func createPseudoPlayer() { // choose a nickname
 		let userPseudoPlayer = ""
