@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Colossus:Hero {
+class Colossus:Hero { //the Colossus class inherits from the class hero
     init() {
         super.init(lifePoints: 150, stuff: ZeusLightningStrike(), nameHero:"Colosse sans nom", descriptionClassHero: "COLOSSE")
     }

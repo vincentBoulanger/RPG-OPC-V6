@@ -8,7 +8,7 @@
 
 import Foundation
 
-class GandalfScepter:Stuff {
+class GandalfScepter:Stuff { // create stuff's declensions
     let spellPower:Int
     init(spellPower:Int){
         self.spellPower = spellPower

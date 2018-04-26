@@ -8,5 +8,5 @@
 
 import Foundation
 
-let newGame = Game() // class game's initialisate
+let newGame = Game()
 newGame.startGame()

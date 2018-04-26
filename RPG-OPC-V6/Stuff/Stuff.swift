@@ -9,7 +9,7 @@
 import Foundation
 
 
-class Stuff {
+class Stuff { // create stuff's parameters
     
     var nameWeapon:String
     var damage: Int

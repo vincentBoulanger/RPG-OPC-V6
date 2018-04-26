@@ -8,14 +8,13 @@
 
 import Foundation
 
-class Game { // create class GAme
+class Game {
     
- var tabTeams = [Team]()
+ var tabTeams = [Team]() // board bringing the teams together
     
-    func startGame () { //
+    func startGame () { // spine of the program  - > similary to appDelegate ?
 
             print("@@@@@@@ Start programm  @@@@@@@@@@ ")
-			print("Lancement de la partie.... ")
             introStartGame()
 		
             for i in 0..<2 {
@@ -25,14 +24,14 @@ class Game { // create class GAme
                 let team = createTeam()
                 tabTeams.append(team)
             }
-			checkAllTeamPseudo()
+		
             fight()
             showWinner()
         	print("@@@@@@@@@@@@@@ End program  @@@@@@@@@@@@@@@ ")
 
-    }
+    	}
 	
-    func resumeTeams() { // resume teams
+    func resumeTeams() { // team selectionned resume
         
         for i in 0..<tabTeams.count {
             print("Résumé de l'équipe \(i+1)")
@@ -43,76 +42,86 @@ class Game { // create class GAme
     
     
     func introStartGame() { // first display : Story
-		
         print("===================")
         print("Vous pénétrez dans les catacombes au péril de votre vie !")
         print("L'ambiance est lugubre. Un frisson vous parcoure le dos. Après cette quête vous découvrirez qui vous êtes réellement! Vous avancez dans l'obscurité ! ")
         print("Soudain à la lueur d'une torche ! Vous vous retrouvez nez à nez avec une autre bande de mercenaires ! C'est l'affrontement ! La partie commence : ")
-		
     }
+	func createPseudoHeroes() {
 	
-	func createPseudoPlayer() {
-		
+	}
+	func createPseudoPlayer() { // choose a nickname
 		let userPseudoPlayer = ""
 		repeat {
-			if let data = readLine() {
+			
+		if let data = readLine() {
 				let	userPseudoPlayer = data
 				print("Vous vous appelerez désormais \(userPseudoPlayer)")
-				}
-		} while userPseudoPlayer != ""
+			}
+			
+			} while userPseudoPlayer != ""
 	}
-
 	
-    func createTeam() -> Team { // composer une équipe
+    func createTeam() -> Team { // compose a team
         let team = Team()
-        team.createHeroes()
+        team.createTeamHeroes()
         return team
     }
-
     
     func fight() {
+		
+//		select a team member
+//		determine if he is a healer or a attack hero
+//		a member of the opposing team is selected if it is a warrior or displays the friendly team if the player has chosen a magician
+//		 the hero attacks the enemy or the magician heals an allied character
+//  	random activation of the magic loot
+//		random activation bonus'game
+		
         print("=============================  Start Battle  ===================================")
         print("LE COMBAT COMMENCE ! ")
-		
-        resumeTeams() // lister les équipes
+        resumeTeams() // list characters's list
  
         var myFighter:Hero
         var myEnemy:Hero
-        
         var heroChoicePlayer = 0
+		
         repeat {
             for i in 0..<tabTeams.count {
                 
                 let team = tabTeams[i]
                 
-                print("Joueur \(i+1), à votre tour : ")
+                print("Joueur \(i+1) vous commencez : ")
                 
                 print("Résumé de l'équipe \(i+1)")
                 team.statsTeams()
                 print("Joueur \(i+1), Choisissez un héro de votre équipe :")
                 
                 repeat{
-						heroChoicePlayer = 0
-						if let data = readLine() {
-							if let dataToInt = Int(data) {
-								heroChoicePlayer = dataToInt
-							}
+					
+					heroChoicePlayer = 0
+					
+					if let data = readLine() { // input with readLine , unwrapping the optional and convert String to Data
+						if let dataToInt = Int(data) {
+							heroChoicePlayer = dataToInt
 						}
+					}
                 } while heroChoicePlayer != 1 && heroChoicePlayer != 2 && heroChoicePlayer != 3
                 
                 myFighter = tabTeams[i].heroes[heroChoicePlayer - 1]
-				magicBox(hero: myFighter)
 				
-                if let magician = myFighter as? Magician {
+				magicBox(hero: myFighter) // launch magic loot
+				
+                
+                if let magician = myFighter as? Magician { // determine if the hero ' selectionned are
 					
                     print("===========================================")
-                    tabTeams[i].statsTeams()
+                    tabTeams[i].statsTeams() // display stats friend's team
 					
                     print("Choisissez un héros de votre équipe pour le soigner")
 					
                     repeat{
                         
-						if let data = readLine() {
+						if let data = readLine() { // input with readLine , unwrapping the optional and convert String to Data
 							if let dataToInt = Int(data) {
 								heroChoicePlayer = dataToInt
 							}
@@ -120,20 +129,15 @@ class Game { // create class GAme
                         
                     } while heroChoicePlayer != 1 && heroChoicePlayer != 2 && heroChoicePlayer != 3
 					
-					eventRandom(team: tabTeams[i])
-					magicBox(hero: myFighter)
-					
                     myEnemy = tabTeams[i].heroes[heroChoicePlayer - 1]
-					
                     print("Les points de vie de votre \(myEnemy.nameHero) le \(myEnemy.descriptionClassHero)  étaient de \(myEnemy.lifePoints)")
 					
                     magician.heal(target: myEnemy)
-					
-                    print("Votre \(myEnemy.descriptionClassHero) a été soigné par votre \(myFighter.descriptionClassHero) pour \(myFighter.stuff.damage) de vie.") // ->
+                    print("Votre \(myEnemy.descriptionClassHero) a été soigné par votre \(myFighter.descriptionClassHero) pour \(myFighter.stuff.damage) de vie.")
                     print("\(myEnemy.nameHero), le \(myEnemy.descriptionClassHero) est désormais de \(myEnemy.lifePoints) points de vie")
-					//les mettre dans la fonction hero
 					
                 } else {
+					
                     print("===========================================")
                     
                     if i == 0 {
@@ -146,7 +150,7 @@ class Game { // create class GAme
 						
                         repeat{
                             
-							if let data = readLine() {
+							if let data = readLine() { // input with readLine , unwrapping the optional and convert String to Data
 								if let dataToInt = Int(data) {
 									heroChoicePlayer = dataToInt
 								}
@@ -154,16 +158,13 @@ class Game { // create class GAme
                             
                         } while heroChoicePlayer != 1 && heroChoicePlayer != 2 && heroChoicePlayer != 3
 						
-                       	eventRandom(team: tabTeams[i])
-						magicBox(hero: myFighter)
 						
                         myEnemy = myEnemyTeam.heroes[heroChoicePlayer - 1]
                         
                         myFighter.attack(target: myEnemy)
 						
-                        print("Vous avez choisi comme enemi : \(myEnemy.nameHero) le \(myEnemy.descriptionClassHero)")
+                        print("Votre enemi est : \(myEnemy.nameHero) le \(myEnemy.descriptionClassHero)")
                         print("\(myFighter.nameHero) votre \(myFighter.descriptionClassHero) a infligé \(myFighter.stuff.damage) points de dégats à \(myEnemy.nameHero) le \(myEnemy.descriptionClassHero) enemi avec son arme \(myFighter.stuff.nameWeapon).")
-						
 						
                         if  myEnemyTeam.deathTeams() {
                             return
@@ -178,10 +179,9 @@ class Game { // create class GAme
                         print("Joueur \(i+1),Choisissez un héros de l'équipe adverse pour l'attaquer : ")
                         
                         repeat{
-							// remplace la class input.
 							heroChoicePlayer = 0
 							
-							if let data = readLine() {
+							if let data = readLine() { // input with readLine , unwrapping the optional and convert String to Data
 								if let dataToInt = Int(data) {
 									heroChoicePlayer = dataToInt
 								}
@@ -196,10 +196,7 @@ class Game { // create class GAme
                         print("Votre enemi est : \(myEnemy.nameHero) le \(myEnemy.descriptionClassHero)")
 						
                         print("\(myFighter.nameHero) votre \(myFighter.descriptionClassHero) a infligé \(myFighter.stuff.damage) points de dégats à \(myEnemy.nameHero) le \(myEnemy.descriptionClassHero) enemi avec son arme \(myFighter.stuff.nameWeapon).")
-                        // afficher l'équiepe enemie
-                        // on le selectionne
-                        // on l'attaque
-				
+					
                         if  myEnemyTeam.deathTeams() {
 							
                             return
@@ -209,13 +206,9 @@ class Game { // create class GAme
                 } // fin de la boucle for in
             
         } while true
-        
-        // choisir un membre de l'équipe 1
-        // déterminer si c'est un mage ou un guerrier
-
     }
     
-    func showWinner () { // function to call the resume team and show the winner
+    func showWinner () { // display the winner of the game
 
         print("=======================================================================")
         print("-------------------------Fin de la bataille----------------------------")
@@ -227,37 +220,43 @@ class Game { // create class GAme
 
     }
     
-    func getWinner() { // function to show the winner
-       
+    func getWinner() {
+		// check if all the element of a team are dead. If it 's right. The function determine the winner
+       	// display the 'end's game
         for i in 0..<tabTeams.count {
           let team = tabTeams[i]
             if !team.deathTeams() {
-                print("Bravo ! L'équipe \(i+1) a gagné ! ")
+                print("Bravo ! Le gagnant est l'équipe \(i+1)")
 				print("--------------- FIN DE LA PARTIE ")
             }
         }
     }
 	
+	func goCheckName(){ // check the name's player team
+//		for i in 0..<tabTeams.count {
+//			let team = tabTeams[i]
+//			team.checkName()
+//		}
+	}
+	
 	func magicBox(hero: Hero) {
-		
+		// roll of the dice to activate the loot box
+		// the event random distribute new stuff to a teammate
 		let random = arc4random_uniform(100)
 		
 		if random <= 20 {
-			print("============= Event aléatoire : Le loot ou la vie ?  =============")
-			print("Soudain la roche s'effondre laissant apparaître un vieux coffre. Vous l'ouvrez ! BRAVO !!!! Vous vous êtes emparé de l'épée des milles vérités.")
+			print("BRAVO ! Vous avez trouvé l'épée des milles vérités.")
 			let newArm = SwordfOfThe1000Truths()
 			hero.stuff = newArm
-			print("=======================================================================")
-			
 		}
-		
-	}
+	} //end's func magicBox
 	
-	func eventRandom(team : Team) {
-		
+	func eventRanDom(team : Team) {
+		// roll of the dice to activate the event random
+		// the event random distribute 20 points of damage to opposing team
 		let eventRandom = arc4random_uniform(20)
 		
-		if eventRandom <= 10 {
+		if eventRandom == 1 {
 			
 			print("============= Event aléatoire : Les dieux s'en mêlent ! =============")
 			print("Les dieux vous observaient depuis le début. Fatigués de vos chamailleries, ils décident d'intervenir à leur bon gré.")
@@ -276,10 +275,12 @@ class Game { // create class GAme
 				}
 			}
 		}
-	}
+	} // end's func eventRandom
+	
+	
 	func checkAllTeamPseudo() -> Bool {
 		
-//	if nameHeroTeam.contains("\(nameHeroTeam)") {
+		//	if nameHeroTeam.contains("\(nameHeroTeam)") {
 		var checkNameHeroTeamIsOk:Bool = false
 		repeat {
 
@@ -310,8 +311,6 @@ class Game { // create class GAme
 				}
 		} while checkNameHeroTeamIsOk == true
 		return checkNameHeroTeamIsOk
-		
-		
 	}
 
-}
+} // end's class game

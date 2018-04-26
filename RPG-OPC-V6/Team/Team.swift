@@ -9,10 +9,13 @@
 import Foundation
 
 
-class Team {
+class Team { // team 's display
+	// hero's section
+	// hero's naming
     
     var heroes = [Hero]() // create empty tab hero
-
+	var nameHeroes = [String]()
+	
     func describeHeroMenu() { // selection hero menu display
 
 		print("==============================================================")
@@ -24,15 +27,15 @@ class Team {
 		print("Choisissez un héros en tapant un chiffre entre 1 et 4 ========")
     }
 	
-	
-	
-    func createHeroes() {
+    func createTeamHeroes() {
+		// the player chose and 3 heroes to his team
+		// the player names his 3 heroes
+		// nickname 's verification to know if two heroes don't have the same name
 		
         for _ in 0..<3 {
-            
                 var userChoiceTeam = 0
-            
 				repeat {
+					
 					describeHeroMenu()   // call the function describe Hero display
 					// input selection hero's player
 					userChoiceTeam = 0
@@ -43,7 +46,7 @@ class Team {
 						}
 					}
 				} while userChoiceTeam != 1 && userChoiceTeam != 2 && userChoiceTeam != 3 && userChoiceTeam != 4
-            
+			
 				switch userChoiceTeam { // the player's choices are compared with the prpposition's game
                         
                         case 1:
@@ -56,134 +59,164 @@ class Team {
 					
                         case 3:
                             print("Vous avez ajouté un nain.")
-                            heroes.append(Dwarft())
-    
+							heroes.append(Dwarft())
                         case 4:
                             print("Vous avez ajouté un magicien.")
                             heroes.append(Magician())
-
                         default:
                            return
                         }
-                    }
-                    namingHero() // call the function naming  heroes
-            }
-    
-    func namingHero() { // function to name the heroes by the players
-        for i in heroes {
-			print("Choisissez un pseudo pour votre : \(i.descriptionClassHero)")
-			var pseudoHero = ""
-			repeat {
-				if let data = readLine() {
-					pseudoHero = data
-				}
-							
-			} while pseudoHero == ""
-					i.nameHero = pseudoHero
-					print("Votre \(i.descriptionClassHero) s'appelle \(i.nameHero)" )
-        }
-		checkName()
-    }
-	
-	func checkName() { // verification the name of hero's team
-		var checkNameIsOk:Bool = false
-		
-		repeat {
-			for i in 0..<heroes.count {
-			
-				let hero = heroes
-			
-				if hero[i].nameHero == hero[i].nameHero {
-					
-					print(".....vérification des pseudos des héros... ERREUR.")
-					print("Vous ne pouvez pas posséder plusieurs héros avec un pseudo identique.")
 					namingHero()
-					checkNameIsOk = false
-					
-					
-				} else {
-					
-					print(".....vérification des pseudos des héros...OK")
-					checkNameIsOk = true
-
-				}
-			}
-		} while checkNameIsOk == false
+                    }
 		
-	}
+		print("création de naming hero()")
+		
+			 // call the function naming  heroes
+            } // end func createHeroes
 	
-//	func checkAllTeamPseudo() -> Bool {
-//		
-//		//	if nameHeroTeam.contains("\(nameHeroTeam)") {
-//		var checkNameHeroTeamIsOk:Bool = false
-//		repeat {
-//			
-//			
-//				print("@@@@@@@@@@@@@@@@   affiche l'équipe ")
-//			for i in 0..<heroes.count {
-//					let team = Team()
-//					let hero = heroes
-//				
-//				for i in team {
-//					if 
-//				}
-//					if hero[i].nameHero == hero[].nameHero {
-//									print("Les équipes possèdent des homonymes.")
-//						print("Vous devez renommer vos héros.")
-//						let team = Team()
-//						team.namingHero()
-//						checkNameHeroTeamIsOk = false
-//						return checkNameHeroTeamIsOk
-//						
-//					} else {
-//						
-//						print("Les équipes sont OK. La partie va pouvoir commencer.")
-//						checkNameHeroTeamIsOk = true
-//						return checkNameHeroTeamIsOk
-//					}
-//				}
+	    func namingHero() { // function to name the heroes by the players
+			
+					var pseudoHero = ""
+					repeat {
+						print("Choisissez un pseudo pour votre héro :")
+						if let data = readLine() {
+							
+							
+								 if !nameHeroes.contains(pseudoHero) {
+									for i in 0..<heroes.count {
+										let hero = heroes[i]
+								
+										pseudoHero = data
+										hero.nameHero = pseudoHero
+										nameHeroes.append(pseudoHero)
+									print("Votre héro s'appellera désormais \(hero.nameHero)")
+			
+									return
+
+										}
+								} else {
+									repeat {
+										print("Vous ne pouvez pas avoir d'homonymes, veuillez recommencer.")
+										self.namingHero()
+									} while self.nameHeroes.contains(pseudoHero)
+									
+							}
+						}
+					
+							
+					} while pseudoHero == ""
+
+	    	} // end func naming Hero
+	
+	
+	
+	
+			//for i in heroes {
+				//				print("Choisissez un pseudo pour votre : \(i.descriptionClassHero)")
+				//				var pseudoHero = ""
+				//				repeat {
+				//					if let data = readLine() {
+				//						pseudoHero = data
+				//					}
+				//
+				//				} while pseudoHero == ""
+				//						i.nameHero = pseudoHero
+				//						print("Votre \(i.descriptionClassHero) s'appelle \(i.nameHero)" )
+				//			}
+		//}
+	
+ // end func naming Hero
+//	let hadError = lastThreeResponses.contains { element in
+//		if case .error = element {
+//			return true
+//		} else {
+//			return false
+//		}
+	
+//	for i in 1..<nameHeroes.count {
+//	print("\(nameHeroes)")
+//	if nameHeroes.contains(pseudoHero) {
 //
-//		} while checkNameHeroTeamIsOk == false
-//		return checkNameHeroTeamIsOk
-//		
-//		
+//	print("Vous ne pouvez saisir deux pseudonymes identiques.")
+//
+//	} else {
+//
+//	return
 //	}
+//	}
+//    func namingHero() { // function to name the heroes by the players
+//			for i in heroes {
+//				print("Choisissez un pseudo pour votre : \(i.descriptionClassHero)")
+//				var pseudoHero = ""
+//				repeat {
+//					if let data = readLine() {
+//						pseudoHero = data
+//					}
+//
+//				} while pseudoHero == ""
+//						i.nameHero = pseudoHero
+//						print("Votre \(i.descriptionClassHero) s'appelle \(i.nameHero)" )
+//			}
+//			checkName()
+//    	} // end func naming Hero
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+//	func checkName(){
+//			print(".....vérification des pseudos des héros")
+//			for i in 0..<heroes.count {
+//				let hero = heroes
+//				if hero[i].nameHero.contains(hero[i+1].nameHero) {
+//					print("test")
+//				}
+//				var checkNameIsOk:Bool = false
+//
+//				print(".....vérification des pseudos des héros... EN COURS")
+//				repeat {
+//					for i in 0..<heroes.count {
+//
+//						let hero = heroes
+//
+//						if hero[i].nameHero == hero[i+1].nameHero || hero[i].nameHero == hero[i+2].nameHero {
+//							print("Vous ne pouvez pas posséder plusieurs héros avec un pseudo identique.")
+//
+//							namingHero()
+//							checkNameIsOk = false
+//							return
+//						} else {
+//							print(".....vérification des pseudos des héros...OK")
+//							checkNameIsOk = true
+//							return
+//						}
+//					}
+//				} while checkNameIsOk == true
+//			}
+//		} // end's func checkName
 	
     func statsTeams() { // different text are displaying if the hero heal or attack or is dead
-        for i in 0..<heroes.count {
-			
-            let hero = heroes[i]
-            
-            if hero.lifePoints >= 1 {
-            
-                if hero is Magician {
-                    print("\(i+1) - \(hero.nameHero), le \(hero.descriptionClassHero) possède \(hero.lifePoints) de vie et peut soigner \(hero.stuff.damage) points de vie.")
-                } else if hero is Warrior || hero is Dwarft || hero is Colossus {
-                    print("\(i+1) - \(hero.nameHero), le \(hero.descriptionClassHero) possède \(hero.lifePoints) de vie et une attaque de \(hero.stuff.damage) points d'attaque.")
-                }
-                
-            } else {
-                    print("\(i+1) - \(hero.nameHero), le \(hero.descriptionClassHero) est mort.")
-                    }
-                }
-        print("==================================================================")
-    } // end class StatsTeams
+		
+			for i in 0..<heroes.count {
+				
+				let hero = heroes[i]
+				
+				if hero.lifePoints >= 1 {
+					
+					if hero is Magician {
+						print("\(i+1) - \(hero.nameHero), le \(hero.descriptionClassHero) possède \(hero.lifePoints) de vie et peut soigner \(hero.stuff.damage) points de vie.")
+					} else if hero is Warrior || hero is Dwarft || hero is Colossus {
+						print("\(i+1) - \(hero.nameHero), le \(hero.descriptionClassHero) possède \(hero.lifePoints) de vie et une attaque de \(hero.stuff.damage) points d'attaque.")
+					}
+					
+				} else {
+					print("\(i+1) - \(hero.nameHero), le \(hero.descriptionClassHero) est mort.")
+				}
+			}
+			print("==================================================================")
+		} // end func StatsTeams
 	
     func deathTeams() -> Bool {
         var isDead = false
         for hero in heroes {
-            if hero.lifePoints <= 0 {
+            if hero.lifePoints == 0 {
                 isDead = true
             } else {
                 return false
@@ -191,6 +224,9 @@ class Team {
         }
         return isDead
     } //end func deathTeam
+
+	
+	
 	
 }// end class team
 

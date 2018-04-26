@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Hero {
+class Hero { //the class hero 's creation 
 	
     var nameHero:String
     var lifePoints:Int

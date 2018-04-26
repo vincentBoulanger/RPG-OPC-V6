@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ThorHammer:Stuff {
+class ThorHammer:Stuff { // create stuff's declensions
     
     init(){
         super.init(nameWeapon: "Le Marteau de Thor", damage: 50)
