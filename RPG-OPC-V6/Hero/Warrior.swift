@@ -9,8 +9,8 @@
 import Foundation
 
 class Warrior:Hero { //the warrior class inherits from the class hero
-    init() {
-        super.init(lifePoints: 100, stuff: Excalibur(), nameHero:"Guerrier sans nom",  descriptionClassHero: "GUERRIER")
+	init(name:String) {
+        super.init(lifePoints: 100, stuff: Excalibur(), nameHero: name,  descriptionClassHero: "GUERRIER")
     }
   
 }

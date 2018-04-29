@@ -9,8 +9,8 @@
 import Foundation
 
 class Dwarft:Hero { //the dwaft class inherits from the class hero
-    init() {
-        super.init(lifePoints: 70, stuff: ThorHammer(), nameHero:"Nain sans nom", descriptionClassHero: "NAIN")
+    init(name:String) {
+        super.init(lifePoints: 70, stuff: ThorHammer(), nameHero: name, descriptionClassHero: "NAIN")
     }
     
 }

@@ -10,8 +10,8 @@ import Foundation
 
 class Magician:Hero { //the magician class inherits from the class hero
    
-    init() {
-        super.init(lifePoints: 70, stuff: GandalfScepter(spellPower: 100), nameHero:"Magicien sans nom", descriptionClassHero: "MAGICIEN")
+    init(name:String) {
+        super.init(lifePoints: 70, stuff: GandalfScepter(spellPower: 100), nameHero: name, descriptionClassHero: "MAGICIEN")
     }
     
     func heal(target: Hero) { // the mage increase life'points of a teammate

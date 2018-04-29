@@ -15,7 +15,10 @@ class Team { // team 's display
     
     var heroes = [Hero]() // create empty tab hero
 	var nameHeroes = [String]()
-	
+	let name:String
+	init(name:String) {
+		self.name = name
+	}
     func describeHeroMenu() { // selection hero menu display
 
 		print("==============================================================")
@@ -38,7 +41,6 @@ class Team { // team 's display
 					
 					describeHeroMenu()   // call the function describe Hero display
 					// input selection hero's player
-					userChoiceTeam = 0
 					
 					if let data = readLine() {
 						if let dataToInt = Int(data) {
@@ -46,67 +48,90 @@ class Team { // team 's display
 						}
 					}
 				} while userChoiceTeam != 1 && userChoiceTeam != 2 && userChoiceTeam != 3 && userChoiceTeam != 4
+			let heroName = uniqueHeroName()
+			
 			
 				switch userChoiceTeam { // the player's choices are compared with the prpposition's game
                         
                         case 1:
                             print("Vous avez ajouté un guerrier.")
-                            heroes.append(Warrior())
+							heroes.append(Warrior(name:heroName))
 					
                         case 2:
                             print("Vous avez ajouté un colosse.")
-                            heroes.append(Colossus())
+                            heroes.append(Colossus(name:heroName))
 					
                         case 3:
                             print("Vous avez ajouté un nain.")
-							heroes.append(Dwarft())
+							heroes.append(Dwarft(name:heroName))
                         case 4:
                             print("Vous avez ajouté un magicien.")
-                            heroes.append(Magician())
+                            heroes.append(Magician(name:heroName))
                         default:
                            return
                         }
-					namingHero()
                     }
 		
-		print("création de naming hero()")
-		
-			 // call the function naming  heroes
+
             } // end func createHeroes
 	
-	    func namingHero() { // function to name the heroes by the players
+	func uniqueHeroName() -> String {
+		var heroName = ""
+		repeat {
 			
-					var pseudoHero = ""
-					repeat {
-						print("Choisissez un pseudo pour votre héro :")
-						if let data = readLine() {
-							
-							
-								 if !nameHeroes.contains(pseudoHero) {
-									for i in 0..<heroes.count {
-										let hero = heroes[i]
-								
-										pseudoHero = data
-										hero.nameHero = pseudoHero
-										nameHeroes.append(pseudoHero)
-									print("Votre héro s'appellera désormais \(hero.nameHero)")
+			print("heroName :")  // call the function describe Hero display
+			// input selection hero's player
 			
-									return
-
-										}
-								} else {
-									repeat {
-										print("Vous ne pouvez pas avoir d'homonymes, veuillez recommencer.")
-										self.namingHero()
-									} while self.nameHeroes.contains(pseudoHero)
-									
-							}
-						}
+			if let data = readLine() {
+				heroName = data
+				if nameHeroes.contains(heroName) {
+					print("Le sspeudo est deja utilisé")
+					heroName = ""
 					
-							
-					} while pseudoHero == ""
-
-	    	} // end func naming Hero
+				} else {
+					nameHeroes.append(heroName)
+				}
+			}
+		} while heroName == ""
+		return heroName
+	}
+	
+	
+//	    func namingHero() { // function to name the heroes by the players
+//
+//					var pseudoHero = ""
+//					repeat {
+//						print("Choisissez un pseudo pour votre héro :")
+//						if let data = readLine() {
+//
+//
+//								 if !nameHeroes.contains(pseudoHero) {
+//									for i in 0..<heroes.count {
+//										let hero = heroes
+//
+//										pseudoHero = data
+//										hero[i].nameHero = pseudoHero
+//										nameHeroes.append(pseudoHero)
+//										print("Votre héro s'appellera désormais \(hero[i].nameHero)")
+//
+//										return
+//									}
+//
+//								} else {
+//
+//									repeat {
+//
+//										print("Vous ne pouvez pas avoir d'homonymes, veuillez recommencer.")
+//										namingHero()
+//
+//										} while self.nameHeroes.contains(pseudoHero)
+//
+//								}
+//						}
+//
+//					} while pseudoHero == ""
+//
+//	    	} // end func naming Hero
 	
 	
 	
