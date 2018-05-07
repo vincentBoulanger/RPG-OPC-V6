@@ -9,4 +9,7 @@
 import Foundation
 
 let newGame = Game()
-newGame.startGame()
+newGame.startGame() // class game's initialisate
+
+
+

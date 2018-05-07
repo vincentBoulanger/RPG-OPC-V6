@@ -9,14 +9,37 @@
 import Foundation
 
 class Magician:Hero { //the magician class inherits from the class hero
-   
+	
     init(name:String) {
-        super.init(lifePoints: 70, stuff: GandalfScepter(spellPower: 100), nameHero: name, descriptionClassHero: "MAGICIEN")
+        super.init(lifePoints: 80, stuff: GandalfScepter(spellPower: 30), nameHero: name, descriptionClassHero: "Sorcerer", lifePointsMax:80)
     }
     
     func heal(target: Hero) { // the mage increase life'points of a teammate
-        target.lifePoints += stuff.damage
-        print(nameHero + " soigne " + target.nameHero + " pour \(stuff.damage) dégâts."  )
+		
+		var magicPower = GandalfScepter(spellPower: 30)
+		
+		print("Your \(target.descriptionClassHero) has been healed by your \(descriptionClassHero) for \(magicPower.spellPower) of life.")
+		
+		if target.lifePoints <= 0 {
+			
+			target.lifePoints = 0
+			
+			magicPower = GandalfScepter(spellPower: 0)
+	
+			print("You can't resuscitate a hero. Your spell has failed.")
+			return
+		}
+		
+		target.lifePoints += magicPower.spellPower // Add 30 lifepoints to the target
+		
+		if target.lifePoints > target.lifePointsMax { // after a heal the heroes can't have more lifepoints than
+			
+			target.lifePoints = target.lifePointsMax
+			
+			print("This hero has all his life points.")
+			
+		}
+		
     }
    
 }

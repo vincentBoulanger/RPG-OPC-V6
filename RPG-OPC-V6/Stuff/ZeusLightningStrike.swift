@@ -11,6 +11,6 @@ import Foundation
 class ZeusLightningStrike:Stuff { // create stuff's declensions
     
     init() {
-        super.init(nameWeapon: "La foudre de Zeus ", damage: 5)
+        super.init(nameWeapon: "The Zeus's lightning Strike", damage: 5)
     }
 }

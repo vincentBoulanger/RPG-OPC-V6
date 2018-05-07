@@ -12,6 +12,6 @@ class GandalfScepter:Stuff { // create stuff's declensions
     let spellPower:Int
     init(spellPower:Int){
         self.spellPower = spellPower
-        super.init(nameWeapon: "Le sceptre de Gandalf", damage: 30)
+		super.init(nameWeapon: "Gandalf's Scepter", damage: 30)
     }
 }

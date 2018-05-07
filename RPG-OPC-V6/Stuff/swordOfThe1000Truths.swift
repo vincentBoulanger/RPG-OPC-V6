@@ -11,7 +11,7 @@ import Foundation
 class SwordfOfThe1000Truths:Stuff { // create stuff's declensions
     
      init() {
-        super.init(nameWeapon: "L'épée des milles vérités", damage: 100)
+        super.init(nameWeapon: "The Sword Of The 1000 Truths", damage: 100)
     }
 
     
