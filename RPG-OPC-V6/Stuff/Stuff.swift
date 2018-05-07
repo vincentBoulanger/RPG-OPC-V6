@@ -13,9 +13,11 @@ class Stuff { // create stuff's parameters
     
     var nameWeapon:String
     var damage: Int
-    init(nameWeapon:String, damage:Int) {
+	var spellPower: Int
+	init(nameWeapon:String, damage:Int, spellPower: Int) {
         self.nameWeapon = nameWeapon
-        self.damage = damage        
+        self.damage = damage
+		self.spellPower = spellPower
     }
     
 }

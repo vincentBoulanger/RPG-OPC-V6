@@ -9,9 +9,9 @@
 import Foundation
 
 class GandalfScepter:Stuff { // create stuff's declensions
-    let spellPower:Int
-    init(spellPower:Int){
-        self.spellPower = spellPower
-		super.init(nameWeapon: "Gandalf's Scepter", damage: 30)
+
+    init(){
+		
+		super.init(nameWeapon: "Gandalf's Scepter", damage: 30, spellPower: 30)
     }
 }

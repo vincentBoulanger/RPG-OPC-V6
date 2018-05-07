@@ -155,7 +155,7 @@ class Game {
                         
                         myEnemyTeam.statsTeams()
                         
-                        print("Choose a hero from the opposing team to attack him : ")
+                        print("Player \(i+1), choose a hero from the opposing team to attack him : ")
 						
 						var heroChoicePlayer = 0
 						
@@ -216,7 +216,7 @@ class Game {
 		
 		
 	}
-	
+
 	
 	
     func showWinner () { // display the winner of the game

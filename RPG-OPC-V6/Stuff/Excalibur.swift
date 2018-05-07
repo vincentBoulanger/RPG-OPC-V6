@@ -10,6 +10,6 @@ import Foundation
 
 class Excalibur:Stuff { // create stuff's declensions
     init(){
-        super.init(nameWeapon: "Excalibur", damage: 10)
+        super.init(nameWeapon: "Excalibur", damage: 10, spellPower: 0)
     }
 }
