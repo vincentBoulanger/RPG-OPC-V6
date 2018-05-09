@@ -92,7 +92,7 @@ class Game {
  
         var myFighter:Hero
         var myEnemy:Hero
-        var heroChoicePlayer = 0
+		var heroChoicePlayer: Int = 0
 		
         repeat {
             for i in 0..<tabTeams.count {
@@ -108,21 +108,22 @@ class Game {
 				
                 print("Player \(i+1), choose a hero from your team :")
                 
-                repeat{
-					
-					heroChoicePlayer = 0
+				repeat {
 					
 					if let data = readLine() { // input with readLine , unwrapping the optional and convert String to Data
 						if let dataToInt = Int(data) {
 							heroChoicePlayer = dataToInt
 						}
 					}
-                } while heroChoicePlayer != 1 && heroChoicePlayer != 2 && heroChoicePlayer != 3
+					
+				} while heroChoicePlayer != 1 && heroChoicePlayer != 2 && heroChoicePlayer != 3
                 
                 myFighter = tabTeams[i].heroes[heroChoicePlayer - 1]
 				
 				magicBox(hero: myFighter) // launch magic loot
+				
                 eventRanDom(team: tabTeams[i])
+				
                 if let magician = myFighter as? Magician { // determine if the hero ' selectionned are
 					
                     print("===========================================")
@@ -172,7 +173,7 @@ class Game {
                         
                         myFighter.attack(target: myEnemy) // the hero chosed by the player attack his enemy
 						
-                        if  myEnemyTeam.deathTeams() { // check if the enemy is dead
+                        if myEnemyTeam.deathTeams() { // check if the enemy is dead
                             return
                         }
                         
@@ -199,7 +200,7 @@ class Game {
                         
                         myFighter.attack(target: myEnemy)
 					
-                        if  myEnemyTeam.deathTeams() {
+                        if myEnemyTeam.deathTeams() {
 							
                             return
                         }
@@ -213,7 +214,17 @@ class Game {
 	
 	
 	func myInputInt () {
-		
+		var heroChoicePlayer = 0
+		repeat{
+			
+			
+			
+			if let data = readLine() { // input with readLine , unwrapping the optional and convert String to Data
+				if let dataToInt = Int(data) {
+					heroChoicePlayer = dataToInt
+				}
+			}
+		} while heroChoicePlayer != 1 && heroChoicePlayer != 2 && heroChoicePlayer != 3
 		
 	}
 
