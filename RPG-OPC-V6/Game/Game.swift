@@ -91,7 +91,6 @@ class Game {
         resumeTeams() // list characters's list
  
         var myFighter:Hero
-        var myEnemy:Hero
 		var heroChoicePlayer: Int = 0
 		
         repeat {
@@ -108,17 +107,17 @@ class Game {
 				
                 print("Player \(i+1), choose a hero from your team :")
                 
-				repeat {
-					
-					if let data = readLine() { // input with readLine , unwrapping the optional and convert String to Data
-						if let dataToInt = Int(data) {
-							heroChoicePlayer = dataToInt
-						}
-					}
-					
-				} while heroChoicePlayer != 1 && heroChoicePlayer != 2 && heroChoicePlayer != 3
-                
-                myFighter = tabTeams[i].heroes[heroChoicePlayer - 1]
+//				repeat {
+//
+//					if let data = readLine() { // input with readLine , unwrapping the optional and convert String to Data
+//						if let dataToInt = Int(data) {
+//							heroChoicePlayer = dataToInt
+//						}
+//					}
+//
+//				} while heroChoicePlayer != 1 && heroChoicePlayer != 2 && heroChoicePlayer != 3
+				
+                myFighter = tabTeams[i].heroes[userChoice() - 1]
 				
 				magicBox(hero: myFighter) // launch magic loot
 				
@@ -130,21 +129,18 @@ class Game {
                     tabTeams[i].statsTeams() // display stats friend's team
 					
                     print("Choose a hero from your team to heal him")
-					
-					var heroChoicePlayer = 0
-					
-					repeat {
-						if let data = readLine() { // input with readLine , unwrapping the optional and convert String to Data
-							if let dataToInt = Int(data) {
-								heroChoicePlayer = dataToInt
-							}
-						}
 						
-					} while heroChoicePlayer != 1 && heroChoicePlayer != 2 && heroChoicePlayer != 3
+//					repeat {
+//						if let data = readLine() { // input with readLine , unwrapping the optional and convert String to Data
+//							if let dataToInt = Int(data) {
+//								heroChoicePlayer = dataToInt
+//							}
+//						}
+//
+//					} while heroChoicePlayer != 1 && heroChoicePlayer != 2 && heroChoicePlayer != 3
 					
-                    myEnemy = tabTeams[i].heroes[heroChoicePlayer - 1]
 
-                    magician.heal(target: myEnemy)
+                    magician.heal(target: tabTeams[i].heroes[userChoice() - 1])
 					
                 } else {
 					
@@ -154,24 +150,26 @@ class Game {
 						
                         let myEnemyTeam = tabTeams[i+1]
                         
-                        myEnemyTeam.statsTeams()
+//                        myEnemyTeam.statsTeams()
+//
+//                        print("Player \(i+1), choose a hero from the opposing team to attack him : ")
+						
+//						var heroChoicePlayer = 0
+//
+//						repeat {
+//							if let data = readLine() { // input with readLine , unwrapping the optional and convert String to Data
+//								if let dataToInt = Int(data) {
+//									heroChoicePlayer = dataToInt
+//								}
+//							}
+//
+//						} while heroChoicePlayer != 1 && heroChoicePlayer != 2 && heroChoicePlayer != 3
+						
+                      //  myEnemy = myEnemyTeam.heroes[userChoice() - 1]
                         
-                        print("Player \(i+1), choose a hero from the opposing team to attack him : ")
+                       // myFighter.attack(target: myEnemy) // the hero chosed by the player attack his enemy
 						
-						var heroChoicePlayer = 0
-						
-						repeat {
-							if let data = readLine() { // input with readLine , unwrapping the optional and convert String to Data
-								if let dataToInt = Int(data) {
-									heroChoicePlayer = dataToInt
-								}
-							}
-							
-						} while heroChoicePlayer != 1 && heroChoicePlayer != 2 && heroChoicePlayer != 3
-						
-                        myEnemy = myEnemyTeam.heroes[heroChoicePlayer - 1]
-                        
-                        myFighter.attack(target: myEnemy) // the hero chosed by the player attack his enemy
+						fightStatement(enemyTeam: myEnemyTeam, fighter: myFighter, index: i)
 						
                         if myEnemyTeam.deathTeams() { // check if the enemy is dead
                             return
@@ -180,52 +178,61 @@ class Game {
                     } else {
 						
                         let myEnemyTeam = tabTeams[i-1]
-                        
-                        myEnemyTeam.statsTeams() // display the statistcs of the enemy 's team
-                        
-                        print("Player \(i+1), choose a hero from the opposing team to attack him  : ")
-						
-						var heroChoicePlayer = 0
-						
-						repeat {
-							if let data = readLine() { // input with readLine , unwrapping the optional and convert String to Data
-								if let dataToInt = Int(data) {
-									heroChoicePlayer = dataToInt
-								}
-							}
-							
-						} while heroChoicePlayer != 1 && heroChoicePlayer != 2 && heroChoicePlayer != 3
-						
-                        myEnemy = myEnemyTeam.heroes[heroChoicePlayer - 1]
-                        
-                        myFighter.attack(target: myEnemy)
+//
+//                        myEnemyTeam.statsTeams() // display the statistcs of the enemy 's team
+//
+//                        print("Player \(i+1), choose a hero from the opposing team to attack him  : ")
+//
+////						var heroChoicePlayer = 0
+////
+////						repeat {
+////							if let data = readLine() { // input with readLine , unwrapping the optional and convert String to Data
+////								if let dataToInt = Int(data) {
+////									heroChoicePlayer = dataToInt
+////								}
+////							}
+////
+////						} while heroChoicePlayer != 1 && heroChoicePlayer != 2 && heroChoicePlayer != 3
+//
+//                        myEnemy = myEnemyTeam.heroes[userChoice() - 1]
+//
+//                        myFighter.attack(target: myEnemy)
 					
+						fightStatement(enemyTeam: myEnemyTeam, fighter: myFighter, index: i)
+						
                         if myEnemyTeam.deathTeams() {
 							
                             return
                         }
                     }
                 }
-                } // fin de la boucle for in
+			} // fin de la boucle for in
             
         } while true
     }
 	
+	func fightStatement(enemyTeam:Team, fighter:Hero, index:Int) {
+		
+		enemyTeam.statsTeams() // display the statistcs of the enemy 's team
+		
+		print("Player \(index+1), choose a hero from the opposing team to attack him : ")
+		
+		let myEnemy = enemyTeam.heroes[userChoice() - 1]
+		
+		fighter.attack(target: myEnemy)
+		
+	}
 	
-	
-	func myInputInt () {
+	func userChoice() -> Int{
 		var heroChoicePlayer = 0
 		repeat{
-			
-			
-			
 			if let data = readLine() { // input with readLine , unwrapping the optional and convert String to Data
 				if let dataToInt = Int(data) {
 					heroChoicePlayer = dataToInt
 				}
 			}
 		} while heroChoicePlayer != 1 && heroChoicePlayer != 2 && heroChoicePlayer != 3
-		
+		return heroChoicePlayer
 	}
 
 	
@@ -286,9 +293,10 @@ class Game {
 				
 				let hero = team.heroes[i]
 				
-				if hero.lifePoints >= 1 {
+				if hero.lifePoints >= 21 {
 					
 					hero.lifePoints -= 20
+					
 					
 				} else if hero.lifePoints <= 0 {
 					hero.lifePoints = 20

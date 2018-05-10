@@ -12,6 +12,6 @@ class GandalfScepter:Stuff { // create stuff's declensions
 
     init(){
 		
-		super.init(nameWeapon: "Gandalf's Scepter", damage: 30, spellPower: 30)
+		super.init(nameWeapon: "Gandalf's Scepter", damage: 0, spellPower: 30)
     }
 }

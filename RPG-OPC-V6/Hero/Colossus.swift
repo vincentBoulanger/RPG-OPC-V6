@@ -10,6 +10,6 @@ import Foundation
 
 class Colossus:Hero { //the Colossus class inherits from the class hero
     init(name:String) {
-        super.init(lifePoints: 150, stuff: ZeusLightningStrike(), nameHero: name, descriptionClassHero: "Colossus", lifePointsMax: 150)
+        super.init(lifePoints: 150, stuff: ZeusLightningStrike(), nameHero: name, descriptionClassHero: "Colossus")
     }
 }

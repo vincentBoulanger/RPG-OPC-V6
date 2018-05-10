@@ -25,7 +25,7 @@ class Team { // team 's display
 		print("1 - Warrior   - Life: 100 - Attack: 10")
 		print("2 - Colossus  - Life: 150 - Attack: 5 ")
 		print("3 - Dwarft    - Life: 70  - Attack: 30 ")
-		print("4 - Sorcerer  - Life: 80  - Heal  : 20")
+		print("4 - Sorcerer  - Life: 80  - Heal  : 30")
 		print("==============================================================")
 		print("Choose a hero by typing a number between 1 and 4 ========")
     }
