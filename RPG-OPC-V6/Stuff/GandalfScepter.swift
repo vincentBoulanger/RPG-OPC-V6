@@ -9,9 +9,7 @@
 import Foundation
 
 class GandalfScepter:Stuff { // create stuff's declensions
-
     init(){
-		
 		super.init(nameWeapon: "Gandalf's Scepter", damage: 0, spellPower: 30)
     }
 }

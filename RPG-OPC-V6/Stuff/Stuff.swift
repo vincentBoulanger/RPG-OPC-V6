@@ -8,9 +8,8 @@
 
 import Foundation
 
-
-class Stuff { // create stuff's parameters
-    
+ // create stuff's parameters. the class defines what a stuff is
+class Stuff {
     var nameWeapon:String
     var damage: Int
 	var spellPower: Int

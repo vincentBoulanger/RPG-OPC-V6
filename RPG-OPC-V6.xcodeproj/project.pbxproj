@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		42B2D6C320972A3200973470 /* CheckNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B2D6C220972A3200973470 /* CheckNames.swift */; };
+		BF3FC8E720A47BAA00F2ADA3 /* CaneOfLazarus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FC8E620A47BAA00F2ADA3 /* CaneOfLazarus.swift */; };
 		BF52B7802048314200F7A379 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52B77F2048314200F7A379 /* main.swift */; };
 		BF52B7872048315100F7A379 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52B7862048315100F7A379 /* Team.swift */; };
 		BF52B78B2048317100F7A379 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52B78A2048317100F7A379 /* Hero.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		42B2D6C220972A3200973470 /* CheckNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckNames.swift; sourceTree = "<group>"; };
+		BF3FC8E620A47BAA00F2ADA3 /* CaneOfLazarus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaneOfLazarus.swift; sourceTree = "<group>"; };
 		BF52B77C2048314200F7A379 /* RPG-OPC-V6 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "RPG-OPC-V6"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF52B77F2048314200F7A379 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		BF52B7862048315100F7A379 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				BF52B79E204845B700F7A379 /* GandalfScepter.swift */,
 				BF52B7A0204846E400F7A379 /* ZeusLightningStrike.swift */,
 				BF9837A9207688D4004E9181 /* SwordOfThe1000Truths.swift */,
+				BF3FC8E620A47BAA00F2ADA3 /* CaneOfLazarus.swift */,
 			);
 			path = Stuff;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				BF52B79A2048419100F7A379 /* Excalibur.swift in Sources */,
 				BF52B7A1204846E400F7A379 /* ZeusLightningStrike.swift in Sources */,
 				BF52B793204831EB00F7A379 /* Colossus.swift in Sources */,
+				BF3FC8E720A47BAA00F2ADA3 /* CaneOfLazarus.swift in Sources */,
 				BF52B7802048314200F7A379 /* main.swift in Sources */,
 				BF52B78B2048317100F7A379 /* Hero.swift in Sources */,
 				BF9837AA207688D4004E9181 /* SwordOfThe1000Truths.swift in Sources */,

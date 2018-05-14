@@ -9,7 +9,7 @@
 import Foundation
 
 let newGame = Game()
-newGame.startGame() // class game's initialisate
+newGame.startGame() // class game's initialisate ???????????- > similary to appDelegate ?
 
 
 

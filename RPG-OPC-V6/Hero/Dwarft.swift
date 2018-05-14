@@ -8,7 +8,8 @@
 
 import Foundation
 
-class Dwarft:Hero { //the dwaft class inherits from the class hero
+//the dwarft class inherits from the class hero. the class defines a dwarft
+class Dwarft:Hero {
     init(name:String) {
         super.init(lifePoints: 70, stuff: ThorHammer(), nameHero: name, descriptionClassHero: "Dwarft")
     }

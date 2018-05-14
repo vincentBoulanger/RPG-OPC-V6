@@ -8,10 +8,10 @@
 
 import Foundation
 
-
-class Team { // team 's display
-	// hero's section
-	// hero's naming
+// team 's display
+// hero's section
+// hero's naming
+class Team {
     
     var heroes = [Hero]() // create empty tab hero
 	var nameHeroes = [String]()
@@ -30,37 +30,30 @@ class Team { // team 's display
 		print("Choose a hero by typing a number between 1 and 4 ========")
     }
 	
+	
+	// the player chose and 3 heroes to his team
+	// the player names his 3 heroes
+	// nickname 's verification to know if two heroes don't have the same name
     func createTeamHeroes() {
-		// the player chose and 3 heroes to his team
-		// the player names his 3 heroes
-		// nickname 's verification to know if two heroes don't have the same name
-		
         for _ in 0..<3 {
                 var userChoiceTeam = 0
 				repeat {
-					
 					describeHeroMenu()   // call the function describe Hero display
 					// input selection hero's player
-					
 					if let data = readLine() {
 						if let dataToInt = Int(data) {
 							userChoiceTeam = dataToInt
 						}
 					}
 				} while userChoiceTeam != 1 && userChoiceTeam != 2 && userChoiceTeam != 3 && userChoiceTeam != 4
-			
-            let heroName = CheckNames.shared.uniqueHeroName()
-		
+            	let heroName = CheckNames.shared.uniqueHeroName()
 				switch userChoiceTeam { // the player's choices are compared with the proposition's game
-                        
                         case 1:
                             print("You added a warrior")
 							heroes.append(Warrior(name:heroName))
-					
                         case 2:
                             print("You added a colossus.")
                             heroes.append(Colossus(name:heroName))
-					
                         case 3:
                             print("You added a dwarft.")
 							heroes.append(Dwarft(name:heroName))
@@ -76,34 +69,23 @@ class Team { // team 's display
 
 	
     func statsTeams() { // different text are displaying if the hero heal or attack or is dead
-		
 			for i in 0..<heroes.count {
-				
 				let hero = heroes[i]
-				
 				if hero.lifePoints >= 1 {
-					
 					if hero is Magician {
-						
-						print("\(i+1) - \(hero.nameHero), the \(hero.descriptionClassHero) has \(hero.lifePoints) of life and can heal 30 life's points.")
-						
+						print("\(i+1) - \(hero.nameHero), the \(hero.descriptionClassHero) has \(hero.lifePoints) of life and can heal \(hero.stuff.spellPower) life's points.")
 					} else if hero is Warrior || hero is Dwarft || hero is Colossus {
-						
 						print("\(i+1) - \(hero.nameHero), the \(hero.descriptionClassHero) has \(hero.lifePoints) of life and \(hero.stuff.damage) attack's points.")
-						
 					}
-					
 				} else {
 					print("\(i+1) - \(hero.nameHero), the \(hero.descriptionClassHero) is dead.")
 				}
 			}
 			print("==================================================================")
-		} // end func StatsTeams
-	
+		}
     
     
     func deathTeams() -> Bool { // function to determine if a hero is dead
-        
         var isDead = false
         for hero in heroes {
             if hero.lifePoints == 0 {
