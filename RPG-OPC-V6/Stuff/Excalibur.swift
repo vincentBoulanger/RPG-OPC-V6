@@ -8,7 +8,8 @@
 
 import Foundation
 
-class Excalibur:Stuff { // create stuff's declensions
+// create stuff's declensions. the excalibur class inherits from the class stuff. the class defines a weapon
+class Excalibur:Stuff {
     init(){
         super.init(nameWeapon: "Excalibur", damage: 10, spellPower: 0)
     }

@@ -8,8 +8,8 @@
 
 import Foundation
 
-class ThorHammer:Stuff { // create stuff's declensions
-    
+// create stuff's declensions. the dwarft class inherits from the class stuff. the class defines a weapon
+class ThorHammer:Stuff {
     init(){
 		super.init(nameWeapon: "Thor's Hammer", damage: 30, spellPower: 0)
     }

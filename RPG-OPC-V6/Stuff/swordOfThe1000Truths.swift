@@ -8,10 +8,9 @@
 
 import Foundation
 
-class SwordfOfThe1000Truths:Stuff { // create stuff's declensions
+// create stuff's declensions. the SwordfOfThe1000Truths class inherits from the class stuff. the class defines a weapon
+class SwordfOfThe1000Truths:Stuff {
      init() {
         super.init(nameWeapon: "The Sword Of The 1000 Truths", damage: 50, spellPower: 0)
     }
-
-    
 }

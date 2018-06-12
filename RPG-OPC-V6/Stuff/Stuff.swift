@@ -10,13 +10,12 @@ import Foundation
 
  // create stuff's parameters. the class defines what a stuff is
 class Stuff {
-    var nameWeapon:String
-    var damage: Int
-	var spellPower: Int
+    let nameWeapon:String
+    let damage: Int
+	let spellPower: Int
 	init(nameWeapon:String, damage:Int, spellPower: Int) {
         self.nameWeapon = nameWeapon
         self.damage = damage
 		self.spellPower = spellPower
     }
-    
 }

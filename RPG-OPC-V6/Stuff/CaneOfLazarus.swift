@@ -8,8 +8,10 @@
 
 import Foundation
 
-class CaneOfLazarus:Stuff { // create stuff's declensions
+class CaneOfLazarus:Stuff { // create stuff's declensions. the CaneOfLazarus class inherits from the class stuff. the class defines a weapon.
 	init(){
 		super.init(nameWeapon: "LazarusCane", damage: 0, spellPower: 50)
 	}
 }
+
+
