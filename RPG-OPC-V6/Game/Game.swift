@@ -21,7 +21,6 @@ class Game {
 			print("====================================")
 			print("Player \(i+1), enter your nickname: ")
 			print("====================================")
-			print("")
 			let team = createTeam()
 			tabTeams.append(team)
 		}
@@ -62,7 +61,6 @@ class Game {
     private func createTeam() -> Team {
 		var teamName = ""
 		repeat {
-			// call the function describe Hero display
 			// input selection hero's player
 			if let data = readLine() {
 				teamName = data

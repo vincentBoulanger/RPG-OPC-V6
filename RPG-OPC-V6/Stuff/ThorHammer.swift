@@ -13,5 +13,4 @@ class ThorHammer:Stuff {
     init(){
 		super.init(nameWeapon: "Thor's Hammer", damage: 30, spellPower: 0)
     }
-    
 }

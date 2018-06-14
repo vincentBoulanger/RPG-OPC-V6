@@ -12,14 +12,15 @@ import Foundation
 // hero's section
 // hero's naming
 class Team {
-    
     var heroes = [Hero]() // create empty tab hero
 	let name:String
 	init(name:String) {
 		self.name = name
 	}
 	
-   func describeHeroMenu() { // selection hero menu display
+	// selection hero menu display
+   func describeHeroMenu() {
+		print("")
 		print("==============================================================")
 		print("1 - Warrior   - Life: 100 - Attack: 10")
 		print("2 - Colossus  - Life: 150 - Attack: 5 ")
@@ -28,7 +29,6 @@ class Team {
 		print("==============================================================")
 		print("Choose a hero by typing a number between 1 and 4 ========")
     }
-	
 	
 	// the player chose and 3 heroes to his team
 	// the player names his 3 heroes
@@ -65,27 +65,28 @@ class Team {
                     }
 	} // end func createHeroes
 	
-    func statsTeams() { // different text are displaying if the hero heal or attack or is dead
-			for i in 0..<heroes.count {
-				let hero = heroes[i]
-				if hero.lifePoints >= 1 {
-					if hero is Magician {
-						print("\(i+1) - \(hero.nameHero), the \(hero.descriptionClassHero) has \(hero.lifePoints) of life and can heal \(hero.stuff.spellPower) life's points.")
-					} else if hero is Warrior || hero is Dwarft || hero is Colossus {
-						print("\(i+1) - \(hero.nameHero), the \(hero.descriptionClassHero) has \(hero.lifePoints) of life and \(hero.stuff.damage) attack's points.")
-					}
-				} else {
-					print("\(i+1) - \(hero.nameHero), the \(hero.descriptionClassHero) is dead.")
+	// different text are displaying if the hero heal or attack or is dead
+    func statsTeams() {
+		for i in 0..<heroes.count {
+			let hero = heroes[i]
+			if hero.lifePoints >= 1 {
+				if hero is Magician {
+					print("\(i+1) - \(hero.nameHero), the \(hero.descriptionClassHero) has \(hero.lifePoints) of life and can heal \(hero.stuff.spellPower) life's points.")
+				} else if hero is Warrior || hero is Dwarft || hero is Colossus {
+					print("\(i+1) - \(hero.nameHero), the \(hero.descriptionClassHero) has \(hero.lifePoints) of life and \(hero.stuff.damage) attack's points.")
 				}
+			} else {
+				print("\(i+1) - \(hero.nameHero), the \(hero.descriptionClassHero) is dead.")
 			}
-			print("==================================================================")
+		}
+		print("==================================================================")
 		}
 	
-    // function to determine if a hero is dead. return true if is right
+	 // function to determine if a hero is dead. return true if is right
      func deathTeams() -> Bool {
         var isDead = false
         for hero in heroes {
-            if hero.lifePoints == 0 {
+            if hero.lifePoints <= 0 {
                 isDead = true
             } else {
                 return false
